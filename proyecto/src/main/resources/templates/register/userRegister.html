@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<title>User Register</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+<div class="w3-center w3-padding-16"><img src="https://i.ibb.co/w6R924K/register.jpg" alt="register" border="0" width="15%">
+<button class="w3-button w3-right w3-float w3-orange w3-large "onclick="document.getElementById('id01').style.display='block'">Do you have account?</button>
+ <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+      <div class="w3-center"><br>
+
+      <form class="w3-container" action="/action_page.php">
+        <div class="w3-section">
+          <label><b>Username</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+          <label><b>Password</b></label>
+          <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" required>
+          <button class="w3-button w3-block w3-light-blue w3-section w3-padding" style="color:white" type="submit">Login</button>
+          <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
+        </div>
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id01').style.display='none'" type="button" class=" w3-left w3-button w3-red">Cancel</button>  
+      
+      </div></div></div></div></div></div></div>
+<p>
+ 
+   
+  <p>  
+   <form  class="w3-row-padding w3-padding-16" style="max-width:1200px;margin:auto" action="/action_page.php">
+     <p class="input-file-wrapper w3-right w3-text-orange">Upload your photo:  
+        <label class="" for="upload"></label>
+        <input class="w3-right"type="file" name="" id="upload">
+    </p> 
+    <select class="w3-select w3-text-orange w3-border" name="option" style="width:100px">
+  <option value=""  disabled selected>Gender</option>
+  <option value="1" >Mr.</option>
+  <option value="2">Ms.</option>
+</select>  
+
+<p>    
+   <div class="w3-text-orange"><b>Name:</b>
+  <input class="w3-input  w3-border" placeholder="Write your name" style="width:220px" name="first" type="text" >
+  </div>  
+  <p>      
+   <div class="w3-text-orange"><b>Last name:</b>
+  <input class="w3-input w3-border" placeholder="Write your last name" style="width:220px" name="last" type="text">
+  </div>
+  <p>
+    <div class="w3-text-orange"><b>eMail:</b>
+  <input class="w3-input w3-border" placeholder="Write your eMail" style="width:220px" name="last" type="text">
+  </div>
+  <p> 
+    <div class="w3-text-orange"><b>Phone number:</b>
+  <input class="w3-input w3-border" placeholder="Write your phone number" style="width:220px" name="last" type="text">
+  </div>
+  <p> 
+    <div class="w3-text-orange"><b>Adress:</b>
+  <input class="w3-input w3-border" placeholder="Write your adress" style="width:220px" name="last" type="text" required>
+  </div>
+  <p> 
+    <div class="w3-text-orange"><b>Zip:</b>
+  <input class="w3-input w3-border" placeholder="Write your ZIP" style="width:220px" name="last" type="text">
+  </div>
+  <p> 
+   <div class="w3-text-orange"><b>City:</b>
+  <input class="w3-input w3-border" placeholder="Which city do you live?" style="width:220px" name="last" type="text">
+  </div>
+  <p> 
+    <div class="w3-text-orange"><b>Country:</b>
+  <input class="w3-input w3-border" placeholder="Write your country" style="width:220px" name="last" type="text"></p>
+  </div>
+  <p> 
+   <div class="w3-text-orange"><b>Password:</b>
+  <input class="w3-input w3-border" placeholder="Write your password" style="width:220px" name="last" type="password">
+  </div>
+  <p> 
+    <div class="w3-text-orange"><b>Confirm password:</b>
+  <input class="w3-input w3-border" placeholder="Repeat password" style="width:220px" name="last" type="password"></p>
+  </div>
+  <p> 
+     
+        
+  <button class="w3-btn w3-orange w3-text-white">Register</button>
+  </p></div>
+</form>
+
+</body>
+</html> 

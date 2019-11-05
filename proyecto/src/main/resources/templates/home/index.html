@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+<body>
+
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+ <div class="w3-left w3-padding-16"> <a href="home/index.html"><img src="https://www.returngis.net/wp-content/uploads/2017/06/wallapop-logo.jpg" style="width:10%"></a></div>
+    <div class="w3-padding w3-right"><i class="fa fa-truck"></i></div>
+     <div  class="w3-button w3-right w3-orange w3-large"onclick="document.getElementById('id01').style.display='block'">Login</div>
+    
+
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+      <div class="w3-center"><br>
+
+      <form class="w3-container" action="/action_page.php">
+        <div class="w3-section">
+          <label><b>Username</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+          <label><b>Password</b></label>
+          <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" required>
+          <button class="w3-button w3-block w3-light-blue w3-section w3-padding" style="color:white" type="submit">Login</button>
+          <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
+        </div>
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id01').style.display='none'" type="button" class=" w3-left w3-button w3-red">Cancel</button>  
+        <span class="w3-right w3-padding w3-hide-small"><a href="register/userRegister.html">Create account</a></span>      
+      </div>
+
+    </div>
+  </div>
+</div>
+
+ <div class=" w3-right w3-large w3-padding-16"><a href="register/userRegister.html" style="margin:20px">Register</a></div>
+
+   <div class="w3-center w3-padding-16"><img src="https://i.ibb.co/jVFrTzJ/estilo-1.png" style="width:10%"></div>
+   
+  </div>
+   
+</div>
+ 
+
+<p>  
+
+
+<div class="w3-container w3-padding-32 w3-center" style="max-width:1200px;margin:auto">
+<p>
+
+<table class="w3-table-all">
+    <thead>
+      <tr class="w3-blue">
+        <th>MedicamentID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Active</th>
+      </tr>
+    </thead>
+
+<tr th:each="medicament:${products}">
+    <td th:text="${medicament.medicamentId}"></td>
+    <td th:text="${medicament.name}"></td>
+    <td th:text="${medicament.price}"></td>
+    <td th:text="${medicament.stockQuantity}"></td>
+    <td th:text="${medicament.active}"></td>
+    <td><a th:href="@{deleteMedicament(medicamentId=${medicament.medicamentId})}"  
+               class=" w3-red btn-primary w3-button">DELETE</a></td>
+    
+</tr>
+
+</table>
+
+
+<div class="w3-content w3-container w3-padding-64" id="contact">
+<div class="w3-row w3-padding-32 w3-section">
+    <div class="w3-col m4 w3-container">
+      <img src="https://i.ibb.co/Fz4SFZJ/barcelona.jpg" alt="barcelona" border="0" class="w3-image w3-round" style="width:100%">
+    </div>
+  <h3 class="w3-center">WHERE WE WORK</h3>
+  <p class="w3-center"><em>I'd love your feedback!</em></p>
+
+  
+    <div class="w3-col m8 w3-panel">
+      <div class="w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>Barcelona, Spain<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> 9330540987<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> clients@megapop.es<br>
+      </div>
+      <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave us a note:</p>
+      <form action="/action_page.php" target="_blank">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+          </div>
+        </div>
+        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+        <button class="w3-button w3-orange w3-text-white w3-right w3-section" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
