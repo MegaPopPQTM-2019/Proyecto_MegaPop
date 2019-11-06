@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cart</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+
+<link rel="stylesheet" href="/webjars/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="/webjars/jquery/3.0.0/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<style>
+table , form {
+    margin:20px;
+}
+
+</style>
+</head>
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+ <div class="w3-left w3-padding-16"> <a href="home/index.html"><img src="https://www.returngis.net/wp-content/uploads/2017/06/wallapop-logo.jpg" style="width:10%"></a></div>
+     <div  class="w3-button w3-right w3-orange w3-large"onclick="document.getElementById('id01').style.display='block'">Login</div>
+    
+
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+      <div class="w3-center"><br>
+
+      <form class="w3-container" action="/action_page.php">
+        <div class="w3-section">
+          <label><b>Username</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+          <label><b>Password</b></label>
+          <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" required>
+          <button class="w3-button w3-block w3-light-blue w3-section w3-padding" style="color:white" type="submit">Login</button>
+          <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
+        </div>
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id01').style.display='none'" type="button" class=" w3-left w3-button w3-red">Cancel</button>  
+        <span class="w3-right w3-padding w3-hide-small"><a href="register/userRegister.html">Create account</a></span>      
+      </div>
+
+    </div>
+  </div>
+</div>
+
+ <div class=" w3-right w3-large w3-padding-16"><a href="register/userRegister.html" style="margin:20px">Register</a></div>
+
+   <div class="w3-center w3-padding-16"><img src="https://i.ibb.co/jVFrTzJ/estilo-1.png" style="width:10%"></div>
+   
+  </div>
+   
+</div>
+ 
+
+<p>  
+<div class="w3-container w3-padding-32 w3-center" style="max-width:1200px;margin:auto">
+<p>
+<table class="w3-table-all">
+    <thead>
+      <tr class="w3-orange w3-text-white">
+      	<th>Image</th>
+        <th>Name</th>
+        <th>Sell by</th>
+        <th>Price</th>
+        <th>Units</th>
+        <th>Quantity</th> 
+        <th></th> 
+      </tr>
+    </thead>
+
+<tr th:each="medicament:${farmacia}">
+    <td></td>
+    <td th:text="${medicament.medicamentId}"></td>
+    <td th:text="${medicament.name}"></td>
+    <td th:text="${medicament.price}"></td>
+    <td th:text="${medicament.stockQuantity}"></td>
+    <td th:text="${medicament.active}"></td>
+    <td><a th:href="@{deleteMedicament(medicamentId=${medicament.medicamentId})}"  
+               class="btn-primary w3-button">DELETE</a></td>
+    
+</tr>
+
+</table>
+<form action="a">
+<input type="submit" value="Pay" class="w3-right btn btn-primary btn-sm"/>
+</form>
+</div>
+</html>
