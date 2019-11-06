@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-//eSTE COMENTARIO DEBERÁ SER ELIMINADO X SER UNA PRUEBA A gIThUB
 
 
 @Controller
