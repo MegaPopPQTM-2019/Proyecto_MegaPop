@@ -58,7 +58,7 @@
 
  <div class=" w3-right w3-large w3-padding-16"><a href="register/userRegister.html" style="margin:20px">Register</a></div>
  <div class="w3-padding w3-right"><i class="fa fa-truck"></i></div>   
-   <div class="w3-center w3-padding-16"><img src="https://i.ibb.co/jVFrTzJ/estilo-1.png" style="width:10%"></div>
+    <div class="w3-center w3-padding-16"><img src="https://i.ibb.co/MM5qtS3/Letras.jpg" alt="Letras" border="0"  style="width:10%"></div>
    
   </div>
    
@@ -74,27 +74,22 @@
     <thead>
       <tr class="w3-orange w3-text-white">
         <th>Name</th>
+        <th>Description</th>
         <th>Category</th>
         <th>Stock</th>
         <th class="w3-right-align">Price</th>
       </tr>
     </thead>
-    <tr>
-      <td>Jill</td>
-      <td>Smith</td>
-      <td>50</td>
-      <td>50</td>
-    </tr>
-    <tr>
-      <td>Eve</td>
-      <td>Jackson</td>
-      <td>94</td>
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-    </tr>
+  <tr th:each="product:${category}">
+    <td th:text="${product.name}"></td>
+    <td th:text="${product.description}"></td>
+    <td th:text="${product.category}"></td>
+    <td th:text="${product.stock}"></td>
+     <td class="w3-right-align" th:text="${product.stock}"></td>
+     </tr>
+   
+    
+
   </table>
 </div>
 
