@@ -33,7 +33,7 @@
  
    
   <p>  
-   <form  class="w3-row-padding w3-padding-16" style="max-width:1200px;margin:auto" action="/action_page.php">
+   <form  class="w3-row-padding w3-padding-16" style="max-width:1200px;margin:auto"method="post" action="register.php" id="register" name="register">
      <p class="input-file-wrapper w3-right w3-text-orange">Upload your photo:  
         <label class="" for="upload"></label>
         <input class="w3-right"type="file" name="photo" id="upload">
@@ -41,44 +41,44 @@
  
 
 <p>    
-   <div class="w3-text-orange"><b>Name:</b>
-  <input class="w3-input  w3-border" placeholder="Write your name" style="width:220px" name="first" type="text" >
+   <div class="w3-text-orange"><label for="name">Name:</label>
+  <input class="w3-input  w3-border" placeholder="Write your name" style="width:220px" name="name" id= "name" type="text" >
   </div>  
   <p>      
-   <div class="w3-text-orange"><b>Last name:</b>
-  <input class="w3-input w3-border" placeholder="Write your last name" style="width:220px" name="lastname" type="text">
-  </div>
+ <div class="w3-text-orange"><label for="lastname">Last name:</label>
+  <input class="w3-input  w3-border" placeholder="Write your last name" style="width:220px" name="lastname" id= "lastname" type="text" >
+  </div>  
   <p>
-    <div class="w3-text-orange"><b>eMail:</b>
-  <input class="w3-input w3-border" placeholder="Write your eMail" style="width:220px" name="mail" type="text">
+   <div class="w3-text-orange"><label for="email">eMail:</label>
+  <input class="w3-input  w3-border" placeholder="Write your e-mail" style="width:220px" name="email" id= "email" type="text" >
   </div>
   <p> 
-    <div class="w3-text-orange"><b>Phone number:</b>
-  <input class="w3-input w3-border" placeholder="Write your phone number" style="width:220px" name="phone" type="text">
+     <div class="w3-text-orange"><label for="phone">Phone number:</label>
+  <input class="w3-input  w3-border" placeholder="Write your phone" style="width:220px" name="phone" id= "phone" type="text" >
   </div>
   <p> 
-    <div class="w3-text-orange"><b>Address:</b>
-  <input class="w3-input w3-border" placeholder="Write your adress" style="width:220px" name="address" type="text" required>
+ <div class="w3-text-orange"><label for="address">Address:</label>
+  <input class="w3-input  w3-border" placeholder="Write your address" style="width:220px" name="address" id= "address" type="text" >
   </div>
   <p> 
-    <div class="w3-text-orange"><b>ZIP:</b>
-  <input class="w3-input w3-border" placeholder="Write your ZIP" style="width:220px" name="zip" type="text">
+   <div class="w3-text-orange"><label for="zip">ZIP:</label>
+  <input class="w3-input  w3-border" placeholder="Write your ZIP" style="width:220px" name="zip" id= "zip" type="text" >
   </div>
   <p> 
-   <div class="w3-text-orange"><b>City:</b>
-  <input class="w3-input w3-border" placeholder="Which city do you live?" style="width:220px" name="city" type="text">
+    <div class="w3-text-orange"><label for="city">City:</label>
+  <input class="w3-input  w3-border" placeholder="Write your city" style="width:220px" name="city" id= "city" type="text" >
   </div>
   <p> 
-    <div class="w3-text-orange"><b>Country:</b>
-  <input class="w3-input w3-border" placeholder="Write your country" style="width:220px" name="country" type="text"></p>
+    <div class="w3-text-orange"><label for="country">Country:</label>
+  <input class="w3-input  w3-border" placeholder="Write your country" style="width:220px" name="country" id= "Country" type="text" >
   </div>
   <p> 
-   <div class="w3-text-orange"><b>Password:</b>
-  <input class="w3-input w3-border" placeholder="Write your password" style="width:220px" name="password" type="password">
+   <div class="w3-text-orange"><label for="password">Password:</label>
+  <input class="w3-input  w3-border" placeholder="Write a password" style="width:220px" name="password" id= "password" type="password" >
   </div>
   <p> 
-    <div class="w3-text-orange"><b>Confirm password:</b>
-  <input class="w3-input w3-border" placeholder="Repeat password" style="width:220px" name="password" type="password"></p>
+     <div class="w3-text-orange"><label for="password2">Confirm password:</label>
+  <input class="w3-input  w3-border" placeholder="Repeat password" style="width:220px" name="password2" id= "password2" type="password" >
   </div>
   <p> 
      
@@ -87,5 +87,44 @@
   </p></div>
 </form>
 
+
+<!-- Funciones -->
+
+
+<script type="text/javascript">
+	function validarEmail(email) 
+	{
+	    var re = /\S+@\S+\.\S+/;
+	    return re.test(email);
+	}
+		var form = document.register;
+	document.register.onsubmit = function(e){
+		var ready = false;		
+
+		if(form.name.value!="" && form.lastname.value!=""&& form.email.value!=""&& form.password.value!="" && form.password2.value!=""){
+			ready = true;
+		}else{
+				ready= false;
+				alert("Hay algunos campos vacios");
+				e.preventDefault();			
+		}
+		if(ready){
+			if(validarEmail(form.email.value)){
+				if(form.password.value==form.password2.value){
+					ready = true;
+				}else{
+					ready= false;
+					alert("El password y la confirmacion no coinciden");
+					form.password.focus();
+					e.preventDefault();
+				}		
+			}else {
+					alert("El email no tiene un formato valido!");
+					form.email.focus();
+					e.preventDefault();			
+			}
+		}
+	}
+</script>
 </body>
 </html> 
