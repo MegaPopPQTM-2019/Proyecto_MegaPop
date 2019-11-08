@@ -1,10 +1,7 @@
 package com.example.proyecto;
 
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -17,26 +14,6 @@ public class User {
     private String email;
 	private String firstname, lastname, phone, address, zip, city, country, password, confpassword;
 	
-	/*
-	 * @Column(name = "firstName") private String firstName;
-	 * 
-	 * @Column(name = "lastName") private String lastName;
-	 * 
-	 * @Column(name = "phoneNumber") private String phoneNumber;
-	 * 
-	 * @Column(name = "address") private String address;
-	 * 
-	 * @Column(name = "zip") private String zip;
-	 * 
-	 * @Column(name = "city") private String city;
-	 * 
-	 * @Column(name = "country") private String country;
-	 * 
-	 * @Column(name = "password") private String password;
-	 * 
-	 * @Column(name="confpassword") private String confpassword;
-	 */
-    
     public User() {
     	super();
     }
@@ -46,6 +23,9 @@ public class User {
     	this.email = email;
     	
     }
+    
+    //getters y setters
+
 
 	public String getEmail() {
 		return email;
@@ -127,7 +107,6 @@ public class User {
 		this.confpassword = confpassword;
 	}
     
-    //getters y setters
 
 
     
