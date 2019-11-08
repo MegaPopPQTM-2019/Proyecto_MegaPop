@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 		return "register/userRegister.html";
 	}
 	
-	@RequestMapping("/insertRegister")
+	@RequestMapping("/register")
 	public String insertRegister(User user, Model model) {
 		service.insertUser(user);
 		model.addAttribute("user", service.findAll());

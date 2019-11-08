@@ -12,35 +12,41 @@ import javax.persistence.Table;
 @Entity
 @Table (name="users")
 public class User {
-	@Id
 	
+	@Id		
     private String email;
-    @Column(name = "firtName")
-    private String firtName;
-    @Column(name = "lasttName")
-    private String lastName;
-    @Column(name = "phoneNumber")
-    private String phoneNumber;
-    @Column(name = "address")
-    private String address;
-    @Column(name = "codePostal")
-    private String codePostal;
-    @Column(name = "city")
-    private String city;
-    @Column(name = "country")
-    private String country;
-    @Column(name = "password")
-    private String password;
-    @Column(name="confpassword")
-    private String confpassword;
+	private String firstname, lastname, phone, address, zip, city, country, password, confpassword;
+	
+	/*
+	 * @Column(name = "firstName") private String firstName;
+	 * 
+	 * @Column(name = "lastName") private String lastName;
+	 * 
+	 * @Column(name = "phoneNumber") private String phoneNumber;
+	 * 
+	 * @Column(name = "address") private String address;
+	 * 
+	 * @Column(name = "zip") private String zip;
+	 * 
+	 * @Column(name = "city") private String city;
+	 * 
+	 * @Column(name = "country") private String country;
+	 * 
+	 * @Column(name = "password") private String password;
+	 * 
+	 * @Column(name="confpassword") private String confpassword;
+	 */
     
     public User() {
     	super();
     }
 
-    
-    
-    //getters y setters
+    public User(String email) {
+    	super();
+    	this.email = email;
+    	
+    }
+
 	public String getEmail() {
 		return email;
 	}
@@ -49,28 +55,28 @@ public class User {
 		this.email = email;
 	}
 
-	public String getFirtName() {
-		return firtName;
+	public String getFirstname() {
+		return firstname;
 	}
 
-	public void setFirtName(String firtName) {
-		this.firtName = firtName;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getLastname() {
+		return lastname;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
-	public String getPhoneNumber() {
-		return phoneNumber;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public String getAddress() {
@@ -81,12 +87,12 @@ public class User {
 		this.address = address;
 	}
 
-	public String getCodePostal() {
-		return codePostal;
+	public String getZip() {
+		return zip;
 	}
 
-	public void setCodePostal(String codePostal) {
-		this.codePostal = codePostal;
+	public void setZip(String zip) {
+		this.zip = zip;
 	}
 
 	public String getCity() {
@@ -112,5 +118,20 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public String getConfpassword() {
+		return confpassword;
+	}
+
+	public void setConfpassword(String confpassword) {
+		this.confpassword = confpassword;
+	}
+    
+    //getters y setters
+
+
+    
+
+    
    
 }

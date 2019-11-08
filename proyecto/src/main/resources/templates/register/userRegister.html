@@ -31,18 +31,19 @@
       </div></div></div></div></div></div>
 <p>
  
+<!--  CUERPO PÁGINA -->
    
   <p>  
-   <form  class="w3-row-padding w3-padding-16" style="max-width:1200px;margin:auto"method="post" action="register.php" id="register" name="register">
-     <p class="input-file-wrapper w3-right w3-text-orange">Upload your photo:  
+   <form  class="w3-row-padding w3-padding-16" style="max-width:1200px;margin:auto"method="post" action="register" id="register" name="register">
+     <!-- <p class="input-file-wrapper w3-right w3-text-orange">Upload your photo:  
         <label class="" for="upload"></label>
         <input class="w3-right"type="file" name="photo" id="upload">
     </p> 
- 
+  -->
 
 <p>    
-   <div class="w3-text-orange"><label for="name">Name:</label>
-  <input class="w3-input  w3-border" placeholder="Write your name" style="width:220px" name="name" id= "name" type="text" >
+   <div class="w3-text-orange"><label for="firstname">Name:</label>
+  <input class="w3-input  w3-border" placeholder="Write your name" style="width:220px" name="firstname" id= "firstname" type="text" >
   </div>  
   <p>      
  <div class="w3-text-orange"><label for="lastname">Last name:</label>
@@ -70,15 +71,15 @@
   </div>
   <p> 
     <div class="w3-text-orange"><label for="country">Country:</label>
-  <input class="w3-input  w3-border" placeholder="Write your country" style="width:220px" name="country" id= "Country" type="text" >
+  <input class="w3-input  w3-border" placeholder="Write your country" style="width:220px" name="country" id= "country" type="text" >
   </div>
   <p> 
    <div class="w3-text-orange"><label for="password">Password:</label>
   <input class="w3-input  w3-border" placeholder="Write a password" style="width:220px" name="password" id= "password" type="password" >
   </div>
   <p> 
-     <div class="w3-text-orange"><label for="password2">Confirm password:</label>
-  <input class="w3-input  w3-border" placeholder="Repeat password" style="width:220px" name="password2" id= "password2" type="password" >
+     <div class="w3-text-orange"><label for="confpassword">Confirm password:</label>
+  <input class="w3-input  w3-border" placeholder="Repeat password" style="width:220px" name="confpassword" id= "confpassword" type="password" >
   </div>
   <p> 
      
@@ -101,7 +102,7 @@
 	document.register.onsubmit = function(e){
 		var ready = false;		
 
-		if(form.name.value!="" && form.lastname.value!=""&& form.email.value!=""&& form.password.value!="" && form.password2.value!=""){
+		if(form.name.value!="" && form.lastname.value!=""&& form.email.value!=""&& form.password.value!="" && form.confpassword.value!=""){
 			ready = true;
 		}else{
 				ready= false;
@@ -110,7 +111,7 @@
 		}
 		if(ready){
 			if(validarEmail(form.email.value)){
-				if(form.password.value==form.password2.value){
+				if(form.password.value==form.confpassword.value){
 					ready = true;
 				}else{
 					ready= false;
