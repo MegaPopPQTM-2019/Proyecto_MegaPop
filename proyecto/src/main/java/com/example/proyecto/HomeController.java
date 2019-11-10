@@ -18,8 +18,13 @@ public class HomeController {
 		return "register/userRegister";
 	}
 	
-	@GetMapping("home")
+	@GetMapping("megapop")
 	public String index() {
 		return "home/index.html";
+	}
+	
+	@GetMapping("cart")
+	public String cart() {
+		return "product/cart";
 	}
 }
