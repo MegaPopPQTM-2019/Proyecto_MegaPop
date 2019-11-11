@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 		service.insertUser(user);
 		model.addAttribute("user", service.findAll());
 		
-		return "home/profile.html";
+		return "home/index.html";
 	}
 
 		
