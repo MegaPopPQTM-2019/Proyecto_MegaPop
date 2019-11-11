@@ -1,5 +1,6 @@
 package com.example.proyecto;
 
+import java.io.File;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,6 +14,7 @@ public class User {
 	@Id		
     private String email;
 	private String firstname, lastname, phone, address, zip, city, country, password, confpassword;
+	private File photo;
 	
     public User() {
     	super();
@@ -23,9 +25,6 @@ public class User {
     	this.email = email;
     	
     }
-    
-    //getters y setters
-
 
 	public String getEmail() {
 		return email;
@@ -106,6 +105,19 @@ public class User {
 	public void setConfpassword(String confpassword) {
 		this.confpassword = confpassword;
 	}
+
+	public File getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(File photo) {
+		this.photo = photo;
+	}
+    
+    //getters y setters
+
+
+	
     
 
 
