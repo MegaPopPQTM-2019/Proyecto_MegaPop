@@ -25,7 +25,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 		
 		return "home/Profile";
 	}
-	
+	@RequestMapping("/login")
+	public String profile(String email, String password, Model model) {
+		service.findbyId(email);
+	}
 	
 	}
 
