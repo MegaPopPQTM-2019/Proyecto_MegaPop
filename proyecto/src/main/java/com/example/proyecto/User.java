@@ -39,8 +39,9 @@ public class User {
 	private String password;
 	@Column(name="confpassword")
 	private String confpassword;
-	@Column(name="photo")
-	private Blob photo;
+	/*
+	 * @Column(name="photo") private Blob photo;
+	 */
 	
 	@OneToMany(mappedBy = "user",  cascade = CascadeType.ALL)
 	private Set<UserProduct> userProducts ;
@@ -137,14 +138,11 @@ public class User {
 		this.confpassword = confpassword;
 	}
 
-	public Blob getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(Blob photo) {
-		this.photo = photo;
-	}
-    
+	/*
+	 * public Blob getPhoto() { return photo; }
+	 * 
+	 * public void setPhoto(Blob photo) { this.photo = photo; }
+	 */
     //getters y setters
 
 
