@@ -1,25 +1,22 @@
-
 <!DOCTYPE html>
-
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-
-<link rel="stylesheet" href="/webjars/bootstrap/4.2.1/css/bootstrap.min.css">
-<script src="/webjars/jquery/3.0.0/jquery.min.js"></script>
-<script src="/webjars/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-<style>
-table , form {
-	margin:20px;
-}
-
-</style>
+<meta charset="ISO-8859-1">
+<title>Profile</title>
 </head>
-<table>
-	<tr th:each="user:${usuarios}">
-		<td th:text="${user.lastname}"></td>
-		         
+<body>
+<tr th:each="user:${userLogin}">
+Hola,
+<td th:text="${user.email}"></td>
+<!-- <td th:text="${user.laststname}"></td>
+<td th:text="${user.zip}"></td>
+<td th:text="${user.email}"></td>
+<td th:text="${user.phone}"></td>
+<td th:text="${user.address}"></td>
+<td th:text="${user.city}"></td>
+<td th:text="${user.country}"></td> -->
 
-	</tr>
-</table>
-
+</tr>
+</body>
 </html>
