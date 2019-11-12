@@ -50,12 +50,13 @@ public class Product {
     private boolean ordered;
 	@Column(name = "sold")
 	private boolean sold;
-	@Column(name = "photo")
-    private Blob photo;  
+	/*
+	 * @Column(name = "photo") private Blob photo;
+	 */
     
-	 @ManyToOne
+	@ManyToOne
 	@JoinColumn(name="email")
-	private User userr;
+	private User user;
 	
    
 	/*@OneToMany(mappedBy = "product",  cascade = CascadeType.ALL)
@@ -63,6 +64,10 @@ public class Product {
 
 
 
+	public Product() {
+		super();
+	}
+	
 	public Product(String name) {
 		super();
 		this.name=name;
@@ -70,7 +75,7 @@ public class Product {
 	
 	
 	
-	public Product(String name, String description, int stockQuantity, double price,  Blob photo) {
+	public Product(String name, String description, int stockQuantity, double price, HttpSession session) {
 		super();		
 		this.name = name;
 		this.description = description;
@@ -78,7 +83,8 @@ public class Product {
 		this.price = price;
 		this.ordered = false;
 		this.sold = false;
-		this.photo = photo;
+		/* this.photo = photo; */
+		/* this.user = session.getAttribute(sessionuser); */
 
 	}
 
@@ -168,16 +174,13 @@ public class Product {
 
 
 
-	public Blob getPhoto() {
-		return photo;
-	}
-
-
-
-	public void setPhoto(Blob photo) {
-		this.photo = photo;
-	}
-
+	/*
+	 * public Blob getPhoto() { return photo; }
+	 * 
+	 * 
+	 * 
+	 * public void setPhoto(Blob photo) { this.photo = photo; }
+	 */
 
 
 

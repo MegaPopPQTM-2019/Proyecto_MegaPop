@@ -16,6 +16,7 @@
 
       <form class="w3-container" action="/action_page.php">
         <div class="w3-section">
+        <td th:text="${session.sessionuser.firstname}"></td>
           <label><b>Username</b></label>
           <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
           <label><b>Password</b></label>
