@@ -16,7 +16,8 @@ import javax.persistence.JoinColumn;
 @Entity
 @Table(name = "userProducts")
 public class UserProduct implements Serializable {
-      @Id
+     
+	@Id
       @GeneratedValue(strategy = GenerationType.IDENTITY)
       private int id;
 		

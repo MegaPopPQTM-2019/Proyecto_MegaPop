@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -18,11 +19,27 @@ import lombok.Data;
 @Table (name="users")
 public class User {
 	
-	@Id	
-    private String email;
+	@Id	   
+	private String email;	
 	@Column(name="firstname")	
 	private String firstname; 
-	lastname, phone, address, zip, city, country, password, confpassword;
+	@Column(name="lastname")
+	private String lastname;
+	@Column(name="phone")
+	private String phone;
+	@Column(name="address")
+	private String address;
+	@Column(name="zip")
+	private String zip;
+	@Column(name="city")
+	private String city;
+	@Column(name="country")
+	private String country;
+	@Column(name="password")
+	private String password;
+	@Column(name="confpassword")
+	private String confpassword;
+	@Column(name="photo")
 	private Blob photo;
 	
 	@OneToMany(mappedBy = "user",  cascade = CascadeType.ALL)

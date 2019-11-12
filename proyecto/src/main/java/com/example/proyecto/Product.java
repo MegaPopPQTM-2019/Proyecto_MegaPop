@@ -35,11 +35,21 @@ public class Product {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int productId;	   
-    private String name,description;
+    private int productId;
+	
+	@Column(name = "name")
+    private String name;
+	@Column(name = "description")
+    private String description;
+	@Column(name = "stockQuantity")
     private int stockQuantity;
+	@Column(name = "price")
     private double price;
-    private boolean ordered, sold;    
+	@Column(name = "ordered")
+    private boolean ordered;
+	@Column(name = "sold")
+private boolean sold;
+	@Column(name = "photo")
     private Blob photo;  
     
     
