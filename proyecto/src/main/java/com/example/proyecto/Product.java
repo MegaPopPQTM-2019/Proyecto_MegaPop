@@ -44,6 +44,8 @@ public class Product {
     private String description;
 	@Column(name = "stockQuantity")
     private int stockQuantity;
+	@Column(name = "category")
+    private String category;
 	@Column(name = "price")
     private double price;
 	@Column(name = "ordered")
@@ -75,16 +77,21 @@ public class Product {
 	
 	
 	
-	public Product(String name, String description, int stockQuantity, double price, HttpSession session) {
+	public Product(String name, String description, int stockQuantity, double price) {
 		super();		
 		this.name = name;
 		this.description = description;
 		this.stockQuantity = stockQuantity;
+		//NO RECIBE LA CATEGORIA PONEMOS HOME PARA PROBAR
+		this.category = "home";
 		this.price = price;
+		//TODAVIA NO USAREMOS ESTOS CAMPOS, SON PARA LA GESTION DE VENTAS
 		this.ordered = false;
 		this.sold = false;
 		/* this.photo = photo; */
-		/* this.user = session.getAttribute(sessionuser); */
+		//USUARIO NULL HASTA QUE PODAMOS RELACIONARLO CON SESSION
+		this.user = null;
+				//session.getAttribute(sessionuser); 
 
 	}
 

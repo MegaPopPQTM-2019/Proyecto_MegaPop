@@ -24,8 +24,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 		service.insertProduct(product);
 		model.addAttribute("productos", service.findAll());
 		//AÑADIR COMRPOBACION
-		return "product/category";
+		return "home/profile";
 	}
-
+	
+	//CUANDO SELECCIONEMOS CATEGORIA EN EL INDEX LLAMAREMOS A ESTA FUNCION QUE FILTRARA LOS PRODUCTOS POR SU CATEGORY
+	/*
+	 * @RequestMapping("/viewproducts") public String showProducts() {
+	 * model.addAttribute("categoryproducts", service.findbyCategory()); return
+	 * "product/CategoryFilter"; }
+	 */
 	
 	}
