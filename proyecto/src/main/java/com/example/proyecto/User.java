@@ -1,12 +1,19 @@
 package com.example.proyecto;
 
-import java.io.File;
 
+import java.sql.Blob;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.Data;
 
+@Data
 @Entity
 @Table (name="users")
 public class User {
@@ -14,7 +21,11 @@ public class User {
 	@Id		
     private String email;
 	private String firstname, lastname, phone, address, zip, city, country, password, confpassword;
-	private File photo;
+	private Blob photo;
+	
+	@OneToMany(mappedBy = "user",  cascade = CascadeType.ALL)
+	private Set<UserProduct> userProducts = new HashSet<>();
+
 	
     public User() {
     	super();
@@ -106,11 +117,11 @@ public class User {
 		this.confpassword = confpassword;
 	}
 
-	public File getPhoto() {
+	public Blob getPhoto() {
 		return photo;
 	}
 
-	public void setPhoto(File photo) {
+	public void setPhoto(Blob photo) {
 		this.photo = photo;
 	}
     
