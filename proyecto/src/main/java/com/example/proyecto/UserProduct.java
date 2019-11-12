@@ -7,8 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import lombok.Data;
+
 import javax.persistence.JoinColumn;
 
+@Data
 @Entity
 @Table(name = "userProducts")
 public class UserProduct implements Serializable {

@@ -18,13 +18,16 @@ import lombok.Data;
 @Table (name="users")
 public class User {
 	
-	@Id		
+	@Id	
     private String email;
-	private String firstname, lastname, phone, address, zip, city, country, password, confpassword;
+	@Column(name="firstname")	
+	private String firstname; 
+	lastname, phone, address, zip, city, country, password, confpassword;
 	private Blob photo;
 	
 	@OneToMany(mappedBy = "user",  cascade = CascadeType.ALL)
-	private Set<UserProduct> userProducts = new HashSet<>();
+	private Set<UserProduct> userProducts ;
+	/* = new HashSet<>(); */
 
 	
     public User() {
