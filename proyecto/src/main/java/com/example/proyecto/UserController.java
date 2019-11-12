@@ -21,10 +21,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 	@RequestMapping("/register")
 	public String insertRegister(User user, Model model) {
 		service.insertUser(user);
-		model.addAttribute("user", service.findAll());
+		model.addAttribute("usuarios", service.findAll());
 		
-		return "home/profile";
+		return "home/Profile";
+	}
+	
+	
 	}
 
 		
-}
