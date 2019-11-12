@@ -34,54 +34,59 @@
 <!--  CUERPO PÁGINA -->
    
   <p>  
-   <form  action="newregister">
-   <div class="form-group">
-    
-        <label for="photo">Photo: </label>
-        <input type="file" name="photo" id="photo">
+   <form  class="w3-row-padding w3-padding-16" style="max-width:1200px;margin:auto"method="post" action="register" id="register" name="register">
    
+    <p class="input-file-wrapper w3-right w3-text-orange">Upload your photo:  
+        <label class="" for="photo"></label>
+        <input class="w3-right"type="file" name="photo" id="photo">
+    </p> 
+
 
 <p>    
-  <label for="firstname">Name:</label>
+   <div class="w3-text-orange"><label for="firstname">Name:</label>
   <input class="w3-input  w3-border" placeholder="Write your name" style="width:220px" name="firstname" id= "firstname" type="text" >
-   
+  </div>  
   <p>      
- <label for="lastname">Last name:</label>
+ <div class="w3-text-orange"><label for="lastname">Last name:</label>
   <input class="w3-input  w3-border" placeholder="Write your last name" style="width:220px" name="lastname" id= "lastname" type="text" >
-  
+  </div>  
   <p>
-   <label for="email">eMail:</label>
+   <div class="w3-text-orange"><label for="email">eMail:</label>
   <input class="w3-input  w3-border" placeholder="Write your e-mail" style="width:220px" name="email" id= "email" type="text" >
-
+  </div>
   <p> 
- <label for="phone">Phone number:</label>
+     <div class="w3-text-orange"><label for="phone">Phone number:</label>
   <input class="w3-input  w3-border" placeholder="Write your phone" style="width:220px" name="phone" id= "phone" type="text" >
- 
+  </div>
   <p> 
-<label for="address">Address:</label>
+ <div class="w3-text-orange"><label for="address">Address:</label>
   <input class="w3-input  w3-border" placeholder="Write your address" style="width:220px" name="address" id= "address" type="text" >
-
+  </div>
   <p> 
-  <label for="zip">ZIP:</label>
+   <div class="w3-text-orange"><label for="zip">ZIP:</label>
   <input class="w3-input  w3-border" placeholder="Write your ZIP" style="width:220px" name="zip" id= "zip" type="text" >
-  
+  </div>
   <p> 
-   <label for="city">City:</label>
+    <div class="w3-text-orange"><label for="city">City:</label>
   <input class="w3-input  w3-border" placeholder="Write your city" style="width:220px" name="city" id= "city" type="text" >
-  
-  <label for="country">Country:</label>
-  <input class="w3-input  w3-border" placeholder="Write your country" style="width:220px" name="country" id= "country" type="text" >  
-   <label for="password">Password:</label>
+  </div>
+  <p> 
+    <div class="w3-text-orange"><label for="country">Country:</label>
+  <input class="w3-input  w3-border" placeholder="Write your country" style="width:220px" name="country" id= "country" type="text" >
+  </div>
+  <p> 
+   <div class="w3-text-orange"><label for="password">Password:</label>
   <input class="w3-input  w3-border" placeholder="Write a password" style="width:220px" name="password" id= "password" type="password" >
-   
- <label for="confpassword">Confirm password:</label>
+  </div>
+  <p> 
+     <div class="w3-text-orange"><label for="confpassword">Confirm password:</label>
   <input class="w3-input  w3-border" placeholder="Repeat password" style="width:220px" name="confpassword" id= "confpassword" type="password" >
-
-
+  </div>
+  <p> 
      
         
   <button class="w3-btn w3-orange w3-text-white">Register</button>
-  </div>
+  </p></div>
 </form>
 
 
@@ -97,7 +102,6 @@
 		var form = document.register;
 	document.register.onsubmit = function(e){
 		var ready = false;		
-
 		if(form.name.value!="" && form.lastname.value!=""&& form.email.value!=""&& form.password.value!="" && form.confpassword.value!=""){
 			ready = true;
 		}else{

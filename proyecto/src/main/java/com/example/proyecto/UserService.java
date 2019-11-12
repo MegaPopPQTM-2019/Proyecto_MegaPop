@@ -1,24 +1,21 @@
+
 package com.example.proyecto;
 
-
-import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 @Service
-public class UserService{
+public class UserService {
 
 	@Autowired
-	static	
 	UserRepository repository;
 	
 	
-	public List<User> findAll() {
+	public Iterable<User> findAll() {
 		
-		return (List<User>)repository.findAll();
+		return repository.findAll();
 	}
 	
 	public void insertUser(User user) {
@@ -26,8 +23,11 @@ public class UserService{
 		repository.save(user);
 	}
 	
-	public static User findbyUser(String user) {
-		return repository.findById(user).orElse(null);
+	public User findbyId(String email){
+		return repository.findById(email).orElse(null);
 	}
+	
+	
+
 
 }
