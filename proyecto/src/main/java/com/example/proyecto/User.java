@@ -144,6 +144,11 @@ public class User {
 		this.confpassword = confpassword;
 	}
 
+	@Override
+	public String toString() {
+		return "User email=" + email ;
+	}
+
 	/*
 	 * public Blob getPhoto() { return photo; }
 	 * 
