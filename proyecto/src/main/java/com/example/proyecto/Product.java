@@ -42,8 +42,8 @@ public class Product {
     private String name;
 	@Column(name = "description")
     private String description;
-	@Column(name = "stockQuantity")
-    private int stockQuantity;
+	@Column(name = "stockquantity")
+    private int stockquantity;
 	@Column(name = "category")
     private String category;
 	@Column(name = "price")
@@ -58,7 +58,7 @@ public class Product {
     
 	@ManyToOne
 	@JoinColumn(name="email")
-	private User user;
+	private User email;
 	
    
 	/*@OneToMany(mappedBy = "product",  cascade = CascadeType.ALL)
@@ -77,11 +77,11 @@ public class Product {
 	
 	
 	
-	public Product(String name, String description, int stockQuantity, double price) {
+	public Product(String name, String description, int stockquantity, double price) {
 		super();		
 		this.name = name;
 		this.description = description;
-		this.stockQuantity = stockQuantity;
+		this.stockquantity = stockquantity;
 		//NO RECIBE LA CATEGORIA PONEMOS HOME PARA PROBAR
 		this.category = "home";
 		this.price = price;
@@ -90,7 +90,7 @@ public class Product {
 		this.sold = false;
 		/* this.photo = photo; */
 		//USUARIO NULL HASTA QUE PODAMOS RELACIONARLO CON SESSION
-		this.user = null;
+		this.email = null;
 				//session.getAttribute(sessionuser); 
 
 	}
@@ -133,14 +133,14 @@ public class Product {
 
 
 
-	public int getStockQuantity() {
-		return stockQuantity;
+	public int getStockquantity() {
+		return stockquantity;
 	}
 
 
 
-	public void setStockQuantity(int stockQuantity) {
-		this.stockQuantity = stockQuantity;
+	public void setStockQuantity(int stockquantity) {
+		this.stockquantity = stockquantity;
 	}
 
 
@@ -190,18 +190,18 @@ public class Product {
 	}
 
 	public User getUser() {
-		return user;
+		return email;
 	}
 
 	public void setUser(User user) {
-		this.user = user;
+		this.email = user;
 	}
 
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", name=" + name + ", description=" + description
-				+ ", stockQuantity=" + stockQuantity + ", category=" + category + ", price=" + price + ", ordered="
-				+ ordered + ", sold=" + sold + ", user=" + user + "]";
+				+ ", stockQuantity=" + stockquantity + ", category=" + category + ", price=" + price + ", ordered="
+				+ ordered + ", sold=" + sold + ", user=" + email + "]";
 	}
 
 

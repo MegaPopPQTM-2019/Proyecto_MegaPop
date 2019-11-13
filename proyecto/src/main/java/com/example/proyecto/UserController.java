@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 	
 	@Autowired
 	UserService service;
+	ProductService pservice;
 		
 	@RequestMapping("/userRegister")
 	public String newUser() {
@@ -33,9 +34,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 	@RequestMapping("/login")
 	public String profile(HttpSession session, @RequestParam("email")String email, @RequestParam("password") String password, Model model) {
 		User user = service.findbyId(email);
-		if(null != user && user.getPassword().contentEquals(password)) {
-			model.addAttribute("userLogin", user);
+		if(null != user && user.getPassword().contentEquals(password)) {	
+			/* model.addAttribute("userproducts",pservice.findbyEmail(email)); 
+			 * 
+			 */
+			session.setAttribute("userproducts", pservice.findbyEmail(user.getEmail()));
 			session.setAttribute("sessionuser", user);
+			
 			return "home/profile";
 		}else {
 			return "home/login";
