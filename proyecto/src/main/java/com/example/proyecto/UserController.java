@@ -38,7 +38,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 			/* model.addAttribute("userproducts",pservice.findbyEmail(email)); 
 			 * 
 			 */
-			session.setAttribute("userproducts", pservice.findbyEmail(user.getEmail()));
+			/*
+			 * session.setAttribute("userproducts", pservice.findbyEmail(user.getEmail()));
+			 */
 			session.setAttribute("sessionuser", user);
 			
 			return "home/profile";

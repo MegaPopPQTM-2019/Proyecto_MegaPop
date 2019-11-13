@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Profile</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -12,9 +12,38 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 </style>
 <body class="w3-theme-l5">
 
-<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
-  <!-- The Grid -->
-  <div class="w3-row">
+
+
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">     
+  <!-- div class="w3-left w3-padding-16"> <a href="home/index.html"><img src="https://www.returngis.net/wp-content/uploads/2017/06/wallapop-logo.jpg" style="width:10%"></a></div> -->
+<select class="w3-select w3-left" name="option" style="width:250px">
+    <option value="" disabled selected>Category</option>
+    <option value="tv">TV</option>
+    <option value="home">Home</option>
+    <option value="phones">Phones</option>
+    <option value="computer">Computer</option>
+    <option value="game consoles">Game Consoles</option>
+    <option value="sports">Sports</option>
+    <option value="cameras">Cameras</option>
+    <option value="watches">Watches</option>
+  </select>
+  
+
+
+ <div class=" w3-right w3-large w3-padding-16"><a href="megapop" style="margin:20px">Logout</a></div>
+   
+ <div class="w3-center w3-padding-16"><a title="Letras" href="megapop"><img src="https://i.ibb.co/MM5qtS3/Letras.jpg" alt="Letras" border="0"  style="width:10%"></a></div>
+   
+  </div>
+   
+</div>
+
+
+
+<div class="w3-container w3-content" style="max-width:1200px;margin-top:100px">    
+
+
     <!-- Left Column -->
     <div class="w3-col m3">
       <!-- Profile -->
@@ -22,16 +51,29 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
         <div class="w3-container">
          <h4 class="w3-center" th:text="${session.sessionuser.firstname}"></h4>
          <h4 class="w3-center" th:text="${session.sessionuser.lastname}"></h4>
-        <!-- IMAGEN! <p class="w3-center"><img src="/w3images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p> -->
+        <p class="w3-center"><img src="https://www.tipsaludable.com/wp-content/uploads/2017/08/b1-8.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p> 
          <hr>
-         <h4 class="fa fa-home  w3-margin-right w3-text-theme"  th:text="${session.sessionuser.address}"></h4>
-         <p><i class="fa fa-plane w3-margin-right w3-text-theme"></i> </p>
-         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+        <p><i class="fa fa-male fa-fw w3-margin-right w3-text-theme"></i> <th:block  th:text="${session.sessionuser.email}"/></p>
+        <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> <th:block  th:text="${session.sessionuser.address}"/></p>
+         <p><i class="fa fa-plane fa-fw w3-margin-right w3-text-theme"></i> <th:block  th:text="${session.sessionuser.city}"/>, <th:block  th:text="${session.sessionuser.country}"/> </p>
+       <div class="w3-button w3-block w3-text-white w3-orange"><a href="newproduct">Add new Product</a></p>
         </div>
       </div>
       <br>
-</div></div></div>
-<div class=" w3-right w3-large w3-padding-16 margin:20px"><a href="newproduct">Add new Product</a></div>
+</div>
+
+      </div>
+      <div class="w3-col m7">
+            <div class="w3-container w3-card w3-white w3-round w3-margin">
+        <!-- AQUI TIENE QUE VENIR LA IMAGEN!! <img src="/w3images/avatar5.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style=""> -->
+        <!-- aQUI LA CATEGORY <span class="w3-right w3-opacity">16 min</span> -->
+        <h4>Product list of <th:block  th:text="${session.sessionuser.firstname}"/></h4><br>
+        <hr class="w3-clear">
+        <p>PONER AQUI LA TABLA DE PRODUCTOS</p>
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Details</button> 
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Pay</button> 
+      </div>  </div></div></div>
+
 </body>
 </html>
 
