@@ -1,5 +1,6 @@
 package com.example.proyecto;
 
+
 import java.sql.Blob;
 import java.util.HashSet;
 import java.util.Set;
@@ -43,34 +44,32 @@ public class Product {
     private String description;
 	@Column(name = "stockQuantity")
     private int stockQuantity;
+	@Column(name = "category")
+    private String category;
 	@Column(name = "price")
-    private double price;	
- @Column(name = "ordered")
-	  private boolean ordered;
-	  
-	  @Column(name = "sold")
-	  private boolean sold;
-	  
-	/* @Column(name = "photo") private Blob photo; */
-	 
-    
+    private double price;
+	@Column(name = "ordered")
+    private boolean ordered;
+	@Column(name = "sold")
+	private boolean sold;
 	/*
-	 * @ManyToOne
-	 * 
-	 * @JoinColumn(name="email") private User user;
+	 * @Column(name = "photo") private Blob photo;
 	 */
+    
+	@ManyToOne
+	@JoinColumn(name="email")
+	private User user;
 	
-   @ManyToOne
-   @JoinColumn(name="email")
-   private User user;
+   
 	/*@OneToMany(mappedBy = "product",  cascade = CascadeType.ALL)
 	private Set<UserProduct> userProducts = new HashSet<>();*/
 
 
-	  public Product() {
-		  super();
-	  }
 
+	public Product() {
+		super();
+	}
+	
 	public Product(String name) {
 		super();
 		this.name=name;
@@ -78,15 +77,22 @@ public class Product {
 	
 	
 	
-	public Product(String name, String description, int stockQuantity, double price, boolean ordered, boolean sold) {
+	public Product(String name, String description, int stockQuantity, double price) {
 		super();		
 		this.name = name;
 		this.description = description;
 		this.stockQuantity = stockQuantity;
-		this.price = price;		
-		  this.ordered = false; 
-		  this.sold = false;		  
-		
+		//NO RECIBE LA CATEGORIA PONEMOS HOME PARA PROBAR
+		this.category = "home";
+		this.price = price;
+		//TODAVIA NO USAREMOS ESTOS CAMPOS, SON PARA LA GESTION DE VENTAS
+		this.ordered = false;
+		this.sold = false;
+		/* this.photo = photo; */
+		//USUARIO NULL HASTA QUE PODAMOS RELACIONARLO CON SESSION
+		this.user = null;
+				//session.getAttribute(sessionuser); 
+
 	}
 
 
@@ -151,23 +157,55 @@ public class Product {
 
 
 
+	public boolean isOrdered() {
+		return ordered;
+	}
+
+
+
+	public void setOrdered(boolean ordered) {
+		this.ordered = ordered;
+	}
+
+
+
+	public boolean isSold() {
+		return sold;
+	}
+
+
+
+	public void setSold(boolean sold) {
+		this.sold = sold;
+	}
+
 	
-	  public boolean isOrdered() { return ordered; }
-	  
-	  
-	  
-	  public void setOrdered(boolean ordered) { this.ordered = ordered; }
-	  
-	  
-	  
-	  public boolean isSold() { return sold; }
-	  
-	  
-	  
-	  public void setSold(boolean sold) { this.sold = sold; }
-	  
-	  
-	  
+	
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", name=" + name + ", description=" + description
+				+ ", stockQuantity=" + stockQuantity + ", category=" + category + ", price=" + price + ", ordered="
+				+ ordered + ", sold=" + sold + ", user=" + user + "]";
+	}
+
+
+
 	/*
 	 * public Blob getPhoto() { return photo; }
 	 * 
@@ -175,7 +213,7 @@ public class Product {
 	 * 
 	 * public void setPhoto(Blob photo) { this.photo = photo; }
 	 */
-	 
+
 
 
 

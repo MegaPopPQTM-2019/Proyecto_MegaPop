@@ -2,7 +2,6 @@ package com.example.proyecto;
 
 
 import java.sql.Blob;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -143,6 +142,11 @@ public class User {
 
 	public void setConfpassword(String confpassword) {
 		this.confpassword = confpassword;
+	}
+
+	@Override
+	public String toString() {
+		return "User email=" + email ;
 	}
 
 	/*

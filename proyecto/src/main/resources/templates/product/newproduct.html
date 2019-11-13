@@ -16,6 +16,7 @@
 
       <form class="w3-container" action="/action_page.php">
         <div class="w3-section">
+        <td th:text="${session.sessionuser.firstname}"></td>
           <label><b>Username</b></label>
           <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
           <label><b>Password</b></label>
@@ -44,28 +45,36 @@
 
 <p>    
    <div class="w3-text-orange"><label for="name">Name:</label>
-  <input class="w3-input  w3-border" placeholder="Write your name" style="width:220px" name="name" id= "name" type="text" >
+  <input class="w3-input  w3-border" placeholder="Write product name" style="width:220px" name="name" id= "name" type="text" >
   </div>  
   <p>      
  <div class="w3-text-orange"><label for="price">Price:</label>
-  <input class="w3-input  w3-border" placeholder="Write your last name" style="width:220px" name="price" id= "price" type="text" >
+  <input class="w3-input  w3-border" placeholder="0.0" style="width:220px" name="price" id= "price" type="text" >
   </div>  
   <p>
    <div class="w3-text-orange"><label for="description">Description:</label>
-  <input class="w3-input  w3-border" placeholder="Write your e-mail" style="width:220px" name="description" id= "description" type="text" >
+  <input class="w3-input  w3-border" placeholder="Write a description" style="width:220px" name="description" id= "description" type="text" >
   </div>
   <p> 
      <div class="w3-text-orange"><label for="stockQuantity">Quantity:</label>
-  <input class="w3-input  w3-border" placeholder="Write your phone" style="width:220px" name="stockQuantity" id= "stockQuantity" type="text" >
+  <input class="w3-input  w3-border" placeholder="Write a quantity" style="width:220px" name="stockQuantity" id= "stockQuantity" type="text" >
   </div>
+
+
+ <select class="w3-select w3-padding-10 w3-text-grey w3-left" name="category" id="category" style="width:250px">
+    <option value="" disabled selected>Category</option>
+    <option value="tv">TV</option>
+    <option value="home">Home</option>
+    <option value="phones">Phones</option>
+    <option value="computer">Computer</option>
+    <option value="game consoles">Game Consoles</option>
+    <option value="sports">Sports</option>
+    <option value="cameras">Cameras</option>
+    <option value="watches">Watches</option>
+  </select>
+
   <p> 
- <div class="w3-text-orange"><label for="category">Category:</label>
-  <input class="w3-input  w3-border" placeholder="Write your address" style="width:220px" name="category" id= "category" type="text" >
-  </div>
-  <p> 
-   <div class="w3-text-orange"><label for="user">User:</label>
-  <input class="w3-input  w3-border" placeholder="Write your ZIP" style="width:220px" name="user" id= "user" type="text" >
-  </div>
+
   <p>    
      
         

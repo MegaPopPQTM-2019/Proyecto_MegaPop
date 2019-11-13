@@ -23,14 +23,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 	
 	@RequestMapping("/addproduct")
 	public String insertProduct(Product product, Model model, HttpSession session) {
+		User user = (User) session.getAttribute("sessionuser");
+		//System.out.println(product);
+		//System.out.println(user);
+		product.setUser(user);
+		
 		service.insertProduct(product);
-		model.addAttribute("productos", service.findAll());	
-		session.setAttribute("sessionproduct", product);
+		model.addAttribute("producto", product);
 		//AÑADIR COMRPOBACION
-		return "product/detailsproduct";
+		return  "product/detailsproduct";
 	}
 	
-	
-
+	//CUANDO SELECCIONEMOS CATEGORIA EN EL INDEX LLAMAREMOS A ESTA FUNCION QUE FILTRARA LOS PRODUCTOS POR SU CATEGORY
+	/*
+	 * @RequestMapping("/viewproducts") public String showProducts() {
+	 * model.addAttribute("categoryproducts", service.findbyCategory()); return
+	 * "product/CategoryFilter"; }
+	 */
 	
 	}

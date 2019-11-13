@@ -22,11 +22,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 	}
 	
 	@RequestMapping("/register")
-	public String insertRegister(HttpSession session,User user, Model model) {
+	public String insertRegister(HttpSession session, User user, Model model) {
 		service.insertUser(user);
 		model.addAttribute("usuarios", service.findAll());
 		session.setAttribute("sessionuser", user);
 		//AÑADIR COMRPOBACION
+		
 		return "home/profile";
 	}
 	@RequestMapping("/login")
@@ -41,5 +42,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 		}
 		
 	}
+	
+	
 	
 	}
