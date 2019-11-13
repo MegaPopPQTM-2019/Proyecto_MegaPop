@@ -5,11 +5,13 @@ import java.sql.Blob;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -41,8 +43,13 @@ public class User {
 	private String password;
 	@Column(name="confpassword")
 	private String confpassword;
-	//@Column(name="photo")
-	//private Blob photo;
+	
+	@Column(name="image")
+	@Lob @Basic
+	private byte[] image;
+	
+	
+	
 	@OneToMany(cascade= CascadeType.ALL)
 	@JoinColumn(name="email")
 	
@@ -149,11 +156,17 @@ public class User {
 		return "User email=" + email ;
 	}
 
-	/*
-	 * public Blob getPhoto() { return photo; }
-	 * 
-	 * public void setPhoto(Blob photo) { this.photo = photo; }
-	 */
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+
+
+
+	
     
     //getters y setters
 
