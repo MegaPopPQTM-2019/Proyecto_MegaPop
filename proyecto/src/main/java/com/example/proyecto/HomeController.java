@@ -36,7 +36,7 @@ public class HomeController {
 	
 	@GetMapping("login")
 	public String login() {
-		return "home/logint";
+		return "home/login";
 	}
 	
 	@RequestMapping("/category")
