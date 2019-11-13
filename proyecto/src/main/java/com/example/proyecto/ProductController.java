@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 		service.insertProduct(product);
 		//model.addAttribute("productos", service.findAll());
 		//AÑADIR COMRPOBACION
-		return "home/profile";
+		return  "product/detailsproduct";
 	}
 	
 	//CUANDO SELECCIONEMOS CATEGORIA EN EL INDEX LLAMAREMOS A ESTA FUNCION QUE FILTRARA LOS PRODUCTOS POR SU CATEGORY
