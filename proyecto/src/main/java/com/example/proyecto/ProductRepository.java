@@ -8,6 +8,6 @@ import org.springframework.data.repository.CrudRepository;
 
 
 public interface ProductRepository  extends CrudRepository<Product, String> {
-	@Query("select u from products u where u.Category = ?1")
+	@Query("select u from Product u where u.category = ?1")
 	public Iterable<Product> findbyCategory(String category);
 }

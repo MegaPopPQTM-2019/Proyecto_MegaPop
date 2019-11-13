@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
+	
 	@Autowired
 	ProductService service;
+	
 	@RequestMapping("/megapop")
 	public String home() {		
 		return "home/index.html";
@@ -32,7 +34,7 @@ public class HomeController {
 		return "product/cart";
 	}
 	
-	@GetMapping("category")
+	@RequestMapping("/category")
 		public String category(@RequestParam ("category") String category, Model model) {
 		model.addAttribute("categoryobjects", service.findbyCategory(category)) ;
 		return "product/categoryfilter";

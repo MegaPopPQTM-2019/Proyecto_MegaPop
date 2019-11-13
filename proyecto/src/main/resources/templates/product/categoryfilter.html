@@ -6,15 +6,14 @@
 </head>
 <body>
 <table>
-	<tr th:each="product:${categoryproducts}">
+	<tr th:each="product:${categoryobjects}">
 
 		<td th:text="${product.name}"></td>
 		<td th:text="${product.description}"></td>
 		<td th:text="${product.price}"></td>
-		<td th:text="${product.stockquantity}"></td>
+		
 aqui habra un boton que nos lleve a details
-            <td><a th:href="@{deleteBook(title=${book.title})}"  
-               class="btn btn-primary btn-sm">DELETE</a></td>
+           
 
 	</tr>
 </table>
