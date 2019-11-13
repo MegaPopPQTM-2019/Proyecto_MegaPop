@@ -34,6 +34,11 @@ public class HomeController {
 		return "product/cart";
 	}
 	
+	@GetMapping("login")
+	public String login() {
+		return "home/logint";
+	}
+	
 	@RequestMapping("/category")
 		public String category(@RequestParam ("category") String category, Model model) {
 		model.addAttribute("categoryobjects", service.findbyCategory(category)) ;
