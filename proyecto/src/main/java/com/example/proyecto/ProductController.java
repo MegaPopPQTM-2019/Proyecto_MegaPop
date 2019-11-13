@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 		product.setUser(user);
 		
 		service.insertProduct(product);
-		//model.addAttribute("productos", service.findAll());
+		model.addAttribute("producto", product);
 		//AÑADIR COMRPOBACION
 		return  "product/detailsproduct";
 	}
