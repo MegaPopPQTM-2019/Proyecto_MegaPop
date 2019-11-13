@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
 	@RequestMapping("/megapop")
-	public String home() {		
+	public String home() {	
+		
 		return "home/index.html";
 	}
 

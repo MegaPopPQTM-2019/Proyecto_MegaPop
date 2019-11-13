@@ -1,6 +1,5 @@
 package com.example.proyecto;
 
-
 import java.sql.Blob;
 import java.util.HashSet;
 import java.util.Set;
@@ -20,6 +19,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.servlet.http.HttpSession;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -44,20 +44,32 @@ public class Product {
 	@Column(name = "stockQuantity")
     private int stockQuantity;
 	@Column(name = "price")
-    private double price;
-	@Column(name = "ordered")
-    private boolean ordered;
-	@Column(name = "sold")
-private boolean sold;
-	@Column(name = "photo")
-    private Blob photo;  
+    private double price;	
+ @Column(name = "ordered")
+	  private boolean ordered;
+	  
+	  @Column(name = "sold")
+	  private boolean sold;
+	  
+	/* @Column(name = "photo") private Blob photo; */
+	 
     
-    
-    
-    @OneToMany(mappedBy = "product",  cascade = CascadeType.ALL)
-	private Set<UserProduct> userProducts = new HashSet<>();
+	/*
+	 * @ManyToOne
+	 * 
+	 * @JoinColumn(name="email") private User user;
+	 */
+	
+   @ManyToOne
+   @JoinColumn(name="email")
+   private User user;
+	/*@OneToMany(mappedBy = "product",  cascade = CascadeType.ALL)
+	private Set<UserProduct> userProducts = new HashSet<>();*/
 
 
+	  public Product() {
+		  super();
+	  }
 
 	public Product(String name) {
 		super();
@@ -66,15 +78,15 @@ private boolean sold;
 	
 	
 	
-	public Product(String name, String description, int stockQuantity, double price,  Blob photo, User user) {
+	public Product(String name, String description, int stockQuantity, double price, boolean ordered, boolean sold) {
 		super();		
 		this.name = name;
 		this.description = description;
 		this.stockQuantity = stockQuantity;
-		this.price = price;
-		this.ordered = false;
-		this.sold = false;
-		this.photo = photo;
+		this.price = price;		
+		  this.ordered = false; 
+		  this.sold = false;		  
+		
 	}
 
 
@@ -139,41 +151,31 @@ private boolean sold;
 
 
 
-	public boolean isOrdered() {
-		return ordered;
-	}
-
-
-
-	public void setOrdered(boolean ordered) {
-		this.ordered = ordered;
-	}
-
-
-
-	public boolean isSold() {
-		return sold;
-	}
-
-
-
-	public void setSold(boolean sold) {
-		this.sold = sold;
-	}
-
-
-
-	public Blob getPhoto() {
-		return photo;
-	}
-
-
-
-	public void setPhoto(Blob photo) {
-		this.photo = photo;
-	}
-
-
+	
+	  public boolean isOrdered() { return ordered; }
+	  
+	  
+	  
+	  public void setOrdered(boolean ordered) { this.ordered = ordered; }
+	  
+	  
+	  
+	  public boolean isSold() { return sold; }
+	  
+	  
+	  
+	  public void setSold(boolean sold) { this.sold = sold; }
+	  
+	  
+	  
+	/*
+	 * public Blob getPhoto() { return photo; }
+	 * 
+	 * 
+	 * 
+	 * public void setPhoto(Blob photo) { this.photo = photo; }
+	 */
+	 
 
 
 

@@ -3,14 +3,17 @@ package com.example.proyecto;
 
 import java.sql.Blob;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 import lombok.Data;
 
@@ -39,12 +42,17 @@ public class User {
 	private String password;
 	@Column(name="confpassword")
 	private String confpassword;
-	@Column(name="photo")
-	private Blob photo;
+	//@Column(name="photo")
+	//private Blob photo;
+	@OneToMany(cascade= CascadeType.ALL)
+	@JoinColumn(name="email")
 	
-	@OneToMany(mappedBy = "user",  cascade = CascadeType.ALL)
-	private Set<UserProduct> userProducts ;
-	/* = new HashSet<>(); */
+	private List<Product> products;
+	
+	/*
+	 * @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) private
+	 * Set<UserProduct> userProducts ; = new HashSet<>();
+	 */
 
 	
     public User() {
@@ -137,13 +145,11 @@ public class User {
 		this.confpassword = confpassword;
 	}
 
-	public Blob getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(Blob photo) {
-		this.photo = photo;
-	}
+	/*
+	 * public Blob getPhoto() { return photo; }
+	 * 
+	 * public void setPhoto(Blob photo) { this.photo = photo; }
+	 */
     
     //getters y setters
 

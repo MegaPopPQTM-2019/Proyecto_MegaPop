@@ -14,7 +14,7 @@ import javax.persistence.JoinColumn;
 
 @Data
 @Entity
-@Table(name = "userProducts")
+@Table(name = "userproducts")
 public class UserProduct implements Serializable {
      
 	@Id
