@@ -23,8 +23,8 @@ public class ProductService {
 		
 		repository.save(product);
 	}
-	public Optional<Product> findbyId(String id){
-		return repository.findById(id);
+	public Product findbyIdint(int id){
+		return repository.findbyIdint(id);
 	}
 	
 	public Iterable<Product> findbyCategory(String category){

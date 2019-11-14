@@ -44,16 +44,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 	 */
 	
     @RequestMapping("/detailproduct")
-	public String detailProduct (@RequestParam("productid") String id, Model model) {
+	public String detailProduct (@RequestParam("productid") int id, Model model) {
 		
-		Optional<Product> productOp = service.findbyId(id);
+    	
+		Product productOp = service.findbyIdint(id);
 		
-		
-		if (productOp.isPresent()) {
-			Product product = new Product(id);
-			product = productOp.get();
-			model.addAttribute("producto",product);}
-		
+			
+		model.addAttribute("producto",productOp);
 		return "product/detailsproduct";
 	}
 	
