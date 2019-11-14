@@ -65,12 +65,17 @@ public class User {
     	super();
     }
 
+   
     public User(String email) {
     	super();
     	this.email = email;
     	
     }
 
+    public List<Product> getproducts(){
+    	return products;
+    }
+    
 	public String getEmail() {
 		return email;
 	}

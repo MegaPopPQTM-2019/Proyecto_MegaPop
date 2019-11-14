@@ -30,6 +30,7 @@ public class ProductService {
 	}
 	
 	public Iterable<Product> findbyEmail (String email){
+		System.out.println(email);
 		return repository.findbyEmail(email);
 	}
 }
