@@ -1,5 +1,7 @@
 package com.example.proyecto;
 
+import java.util.Optional;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +42,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 	 * model.addAttribute("categoryproducts", service.findbyCategory()); return
 	 * "product/CategoryFilter"; }
 	 */
+	
+    @RequestMapping("/detailproduct")
+	public String detailProduct (@RequestParam("productid") String id, Model model) {
+		
+		Optional<Product> productOp = service.findbyId(id);
+		
+		
+		if (productOp.isPresent()) {
+			Product product = new Product(id);
+			product = productOp.get();
+			model.addAttribute("producto",product);}
+		
+		return "product/detailsproduct";
+	}
 	
 	}

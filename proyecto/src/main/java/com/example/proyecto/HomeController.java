@@ -15,8 +15,8 @@ public class HomeController {
 	ProductService service;
 	
 	@RequestMapping("/megapop")
-	public String home() {
-		
+	public String home(Model model) {
+		model.addAttribute("allproducts",service.findAll());
 		return "home/index.html";
 	}
 

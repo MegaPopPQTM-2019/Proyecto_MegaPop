@@ -70,18 +70,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 </div>
  <p>  
 <!-- Cuerpo Pagina -->
-<p><table>
-	<tr th:each="product:${allproducts}">
 
-		<td th:text="${product.name}"></td>
-		<td th:text="${product.description}"></td>
-		<td th:text="${product.price}"></td>
-		aqui habra un boton que nos lleve a details
-           
-
-	</tr></p>
 
 <div class="w3-container w3-padding-16 w3-center" style="max-width:1200px;margin:auto;margin-top:46px">
+<p>
 <p>
 
 
@@ -152,8 +144,41 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     </div>
     
   </div>
-  
+ 
   </div>
+<div class="w3-container w3-center" style="max-width:1200px;margin:auto">
+<table class="w3-table w3-center">
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+	<th>Category</th>
+	<th>Price</th>
+	<th>Option</th>
+
+</tr>
+
+
+	<tr th:each="product:${allproducts}">
+
+
+		<td th:text="${product.name}"></td>
+		<td th:text="${product.description}"></td>
+			<td th:text="${product.category}"></td>
+		<td th:text="${product.price}"></td>
+
+            
+<td><a th:href="@{detailproduct(productid=${product.productId})}"  
+               class="btn btn-primary bt-sm">DETAIL</a></td>
+
+
+	</tr>
+</table>
+</div>
+
+
+ 
+
+
 
 <div class="w3-content w3-container w3-padding-64" id="contact">
 <div class="w3-row w3-padding-32 w3-section">

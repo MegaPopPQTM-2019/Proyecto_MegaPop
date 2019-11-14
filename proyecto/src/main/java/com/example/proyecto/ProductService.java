@@ -1,6 +1,8 @@
 
 package com.example.proyecto;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,8 +23,8 @@ public class ProductService {
 		
 		repository.save(product);
 	}
-	public Product findbyId(String id){
-		return repository.findById(id).orElse(null);
+	public Optional<Product> findbyId(String id){
+		return repository.findById(id);
 	}
 	
 	public Iterable<Product> findbyCategory(String category){
