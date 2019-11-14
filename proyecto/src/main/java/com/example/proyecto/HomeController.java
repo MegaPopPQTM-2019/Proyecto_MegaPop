@@ -34,7 +34,7 @@ public class HomeController {
 		return "product/cart";
 	}
 	
-	@GetMapping("login")
+	@GetMapping("hlogin")
 	public String login() {
 		return "home/login";
 	}

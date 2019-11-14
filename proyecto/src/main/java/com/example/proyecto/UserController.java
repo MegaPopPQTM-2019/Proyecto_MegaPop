@@ -52,20 +52,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 		public String vprofile(HttpSession session, @RequestParam("email")String email, @RequestParam("password") String password, Model model) {
 			User user = service.findbyId(email);
 			if(null != user && user.getPassword().contentEquals(password)) {	
-				/* model.addAttribute("userproducts",pservice.findbyEmail(email)); 
-				 * 
-				 */
-				/*
-				 * session.setAttribute("userproducts", pservice.findbyEmail(user.getEmail()));
-				 */
+			/*
+			 * model.addAttribute("userproducts",pservice.findbyEmail(email));
+			 * 
+			 * 
+			 * 
+			 * session.setAttribute("userproducts", pservice.findbyEmail(user.getEmail()));
+			 */
+				 
 				session.setAttribute("sessionuser", user);
 				
 				return "home/profile";
 			}else {
 				return "home/login";
 			}
-	}
+		}}
 	
 	
 	
-	}
+	
+	
