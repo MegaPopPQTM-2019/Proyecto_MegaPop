@@ -70,7 +70,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 </div>
  <p>  
 <!-- Cuerpo Pagina -->
+<p><table>
+	<tr th:each="product:${allproducts}">
 
+		<td th:text="${product.name}"></td>
+		<td th:text="${product.description}"></td>
+		<td th:text="${product.price}"></td>
+		aqui habra un boton que nos lleve a details
+           
+
+	</tr></p>
 
 <div class="w3-container w3-padding-16 w3-center" style="max-width:1200px;margin:auto;margin-top:46px">
 <p>

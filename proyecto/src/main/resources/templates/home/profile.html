@@ -72,18 +72,17 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
         <!-- aQUI LA CATEGORY <span class="w3-right w3-opacity">16 min</span> -->
         <h4>Product list of <th:block  th:text="${session.sessionuser.firstname}"/></h4><br>
         <hr class="w3-clear">
-        <p>PONER AQUI LA TABLA DE PRODUCTOS</p>
-        <table>
+        <p><table>
 	<tr th:each="product:${userproducts}">
 
-		<td th:text="${product}"></td>
-		<!-- <td th:text="${product.description}"></td>
-		<td th:text="${product.price}"></td> -->
-		
-	aqui habra un boton que nos lleve a details
+		<td th:text="${product.name}"></td>
+		<td th:text="${product.description}"></td>
+		<td th:text="${product.price}"></td>
+		aqui habra un boton que nos lleve a details
            
 
-	</tr>
+	</tr></p>
+        
         
         <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Details</button> 
        
