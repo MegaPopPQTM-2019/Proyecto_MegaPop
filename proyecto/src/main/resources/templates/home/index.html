@@ -16,10 +16,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 <!-- Cabecera -->
 
 
-<div class="w3-top">
-  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">  
- <!--  <form  class="w3-row-padding w3-padding-16" style="max-width:1200px;margin:auto"method="post" action="category" id="category" name="category">     
-<select class="w3-select w3-padding-10 w3-text-grey w3-left" name="option" style="width:250px">
+<div class="w3-top"> 
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+ 
+
+    
+ <form  class="w3-row-padding w3-padding-16" style="max-width:1200px;margin:auto"method="post" action="viewproducts" id="category" name="category">  
+	<select name="category">
     <option value="" disabled selected>Category</option>
     <option value="tv">TV</option>
     <option value="home">Home</option>
@@ -30,9 +33,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     <option value="cameras">Cameras</option>
     <option value="watches">Watches</option>
   </select>
- 
-<button class="w3-btn w3-orange w3-text-white">search</button>
-</form> -->
+  <button class="w3-btn w3-orange w3-text-white" type="submit">search</button>
+   </form>
+  
+
+
+
+
 
 
      <div  class="w3-button w3-right w3-orange w3-text-white w3-large"onclick="document.getElementById('id01').style.display='block'">Login</div>
@@ -84,10 +91,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     
     <div class="w3-col l3 m6 w3-margin-bottom w3-center">
    
-      <img src="https://tiendadish.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/5/0/50uk6500aua.jpg" border="0" alt="bicicleta" style="width:100%">
+      <img src="https://tiendadish.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/5/0/50uk6500aua.jpg" border="0" alt="tv" style="width:100%">
       <h3><b>TV</b></h3>
       <p><em>Watch your series in the best quality.</em></p>
-      <p><button class="w3-button w3-large w3-orange w3-text-white w3-block" type="submit">Buy it!</button></p>
+      <p><a href="category"><button class="w3-button w3-large w3-orange w3-text-white w3-block" type="submit">Buy it!</button></a></p>
     </div>
    <div class="w3-col l3 m6 w3-margin-bottom w3-center">
  

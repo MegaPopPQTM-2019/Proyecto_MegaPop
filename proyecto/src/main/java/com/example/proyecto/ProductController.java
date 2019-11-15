@@ -25,9 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 	
 	@RequestMapping("/addproduct")
 	public String insertProduct(Product product, Model model, HttpSession session) {
-		User user = (User) session.getAttribute("sessionuser");
-		//System.out.println(product);
-		//System.out.println(user);
+		User user = (User) session.getAttribute("sessionuser");		
 		product.setUser(user);
 		
 		service.insertProduct(product);
@@ -36,12 +34,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 		return  "product/detailsproduct";
 	}
 	
-	//CUANDO SELECCIONEMOS CATEGORIA EN EL INDEX LLAMAREMOS A ESTA FUNCION QUE FILTRARA LOS PRODUCTOS POR SU CATEGORY
-	/*
-	 * @RequestMapping("/viewproducts") public String showProducts() {
-	 * model.addAttribute("categoryproducts", service.findbyCategory()); return
-	 * "product/CategoryFilter"; }
-	 */
+	
+	
+	  @RequestMapping("/viewproducts") 
+	  public String showProducts(@RequestParam("category") String category,Model model) {
+	  model.addAttribute("categoryproducts", service.findbyCategory(category));
+	  return "product/CategoryFilter"; 
+	  }
+	 
 	
     @RequestMapping("/detailproduct")
 	public String detailProduct (@RequestParam("productid") int id, Model model) {

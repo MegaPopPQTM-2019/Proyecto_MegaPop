@@ -6,14 +6,13 @@
 </head>
 <body>
 <table>
-	<tr th:each="product:${categoryobjects}">
+	<tr th:each="product:${categoryproducts}">
 
 		<td th:text="${product.name}"></td>
 		<td th:text="${product.description}"></td>
 		<td th:text="${product.price}"></td>
 		
-aqui habra un boton que nos lleve a details
-           
+
 
 	</tr>
 </table>

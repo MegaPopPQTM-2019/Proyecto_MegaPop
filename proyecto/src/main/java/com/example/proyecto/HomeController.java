@@ -41,6 +41,10 @@ public class HomeController {
 	public String login() {
 		return "home/login";
 	}
+	@GetMapping("categoryfilter")
+	public String categoryfilter() {
+		return "product/categoryfilter";
+	}
 	
 	@RequestMapping("/category")
 		public String category(@RequestParam ("category") String category, Model model) {
