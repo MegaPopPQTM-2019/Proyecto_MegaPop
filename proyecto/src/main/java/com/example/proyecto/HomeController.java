@@ -15,8 +15,8 @@ public class HomeController {
 	ProductService service;
 	
 	@RequestMapping("/megapop")
-	public String home(Model model) {
-		model.addAttribute("allproducts",service.findAll());
+	public String home() {
+		
 		return "home/index.html";
 	}
 
@@ -25,10 +25,8 @@ public class HomeController {
 		return "register/userRegister";
 	}
 	
-	@GetMapping("megapop")
-	public String index(Model model) {
-		System.out.println(service.findAll());
-		  model.addAttribute("allproducts",service.findAll());
+	@GetMapping("home")
+	public String index() {
 		return "home/index.html";
 	}
 	

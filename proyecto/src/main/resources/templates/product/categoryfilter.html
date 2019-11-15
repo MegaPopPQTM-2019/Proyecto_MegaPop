@@ -1,21 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <title>Categories</title>
 </head>
 <body>
-<table>
+
+
+<div class="w3-top"> 
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+ 
+
+ <!--    
+ <form  class="w3-row-padding w3-padding-16" style="max-width:1200px;margin:auto"method="post" action="viewproducts" id="category" name="category">  
+	<select name="category">
+    <option value="" disabled selected>Category</option>
+    <option value="tv">TV</option>
+    <option value="home">Home</option>
+    <option value="phones">Phones</option>
+    <option value="computer">Computer</option>
+    <option value="gameconsoles">Game Consoles</option>
+    <option value="sports">Sports</option>
+    <option value="cameras">Cameras</option>
+    <option value="watches">Watches</option>
+  </select>
+  <button class="w3-btn w3-orange w3-text-white" type="submit">search</button>
+   </form> -->
+  
+
+
+
+
+
+
+     <div  class="w3-button w3-right w3-orange w3-text-white w3-large"onclick="document.getElementById('id01').style.display='block'">Login</div>
+    
+
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+      <div class="w3-center"><br>
+
+  <form class="w3-container" action="login">
+        <div class="w3-section">
+          <label for="email"><b>Email</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="email" id="email" required>
+         <label for="password"><b>Password</b></label>
+          <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="password"  id="password" required>
+          <button class="w3-button w3-block w3-light-blue w3-section w3-padding" style="color:white" type="submit">Login</button>
+          
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-right w3-red">Cancel</button>
+       
+      </div>
+</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+ <div class=" w3-right w3-large w3-padding-16 margin:20px"><a href="register">Register</a></div>
+  <div class="w3-center w3-padding-16"><a title="Letras" href="http://localhost:8080/megapop"><img src="https://i.ibb.co/MM5qtS3/Letras.jpg" alt="Letras" border="0"  style="width:10%"></a></div>
+   
+  </div>
+   
+</div>
+ <p>  
+
+
+
+<!-- CUERPO PAGINA -->
+
+
+<div class="w3-container w3-center" style="max-width:1200px;margin:auto;margin-top:80px">
+<table class="w3-table-all w3-center">
+<thead>
+<tr class="w3-orange w3-text-white">
+	<th>Name</th>
+	<th>Description</th>
+	<th>Category</th>
+	<th>Price</th>
+	<th>Option</th>
+
+</tr>
+</thead>
+
 	<tr th:each="product:${categoryproducts}">
+
 
 		<td th:text="${product.name}"></td>
 		<td th:text="${product.description}"></td>
+			<td th:text="${product.category}"></td>
 		<td th:text="${product.price}"></td>
-		
+
+            
+<td><a th:href="@{detailproduct(productid=${product.productId})}"  
+               class="w3-text-blue">DETAIL</a></td>
 
 
 	</tr>
 </table>
+</div>
+
 
 </body>
 </html>
