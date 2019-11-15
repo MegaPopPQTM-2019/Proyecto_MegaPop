@@ -7,6 +7,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -30,8 +32,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 		
 		service.insertProduct(product);
 		model.addAttribute("producto", product);
+		
 		//AÑADIR COMRPOBACION
-		return  "product/detailsproduct";
+		return  "home/profile";
 	}
 	
 	
@@ -53,5 +56,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 		model.addAttribute("producto",productOp);
 		return "product/detailsproduct";
 	}
+    
+    @GetMapping("/product/{category}")
+    public String categoryVariable(@PathVariable ("category") String category, Model model) {
+    	model.addAttribute("categoryproducts", service.findbyCategory(category));
+    	return "product/CategoryFilter";
+    }
 	
 	}

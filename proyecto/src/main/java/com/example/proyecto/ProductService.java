@@ -28,7 +28,7 @@ public class ProductService {
 	}
 	
 	public Iterable<Product> findbyCategory(String category){
-		return repository.findbyCategory(category);
+		return repository.findbyCategory(category);		
 	}
 	
 	public Iterable<Product> findbyEmail (String email){

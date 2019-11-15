@@ -3,6 +3,7 @@
 <title>Home</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,7 +29,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     <option value="home">Home</option>
     <option value="phones">Phones</option>
     <option value="computer">Computer</option>
-    <option value="game consoles">Game Consoles</option>
+    <option value="gameconsoles">Game Consoles</option>
     <option value="sports">Sports</option>
     <option value="cameras">Cameras</option>
     <option value="watches">Watches</option>
@@ -86,36 +87,35 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 
     <img src="https://i.ibb.co/Xzt9BSb/eslogan.jpg" alt="eslogan" border="0">
   <!-- First Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center" style="max-width:1200px;margin:auto" id="bicicleta">
+  <div class="w3-row-padding w3-padding-16 w3-center" style="max-width:1200px;margin:auto" id="bicicleta">     
     
-    
-    <div class="w3-col l3 m6 w3-margin-bottom w3-center">
+    <div class="w3-col l3 m6 w3-margin-bottom w3-center" >
    
       <img src="https://tiendadish.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/5/0/50uk6500aua.jpg" border="0" alt="tv" style="width:100%">
       <h3><b>TV</b></h3>
-      <p><em>Watch your series in the best quality.</em></p>
-      <p><a href="category"><button class="w3-button w3-large w3-orange w3-text-white w3-block" type="submit">Buy it!</button></a></p>
+      <p><em>Watch your series in the best quality.</em></p>     
+      <p><a th:href="@{/product/{category}(category=tv)}"  class="w3-button w3-large w3-orange w3-text-white w3-block">Filter</button></a></p>
     </div>
    <div class="w3-col l3 m6 w3-margin-bottom w3-center">
  
       <img src="https://petertysonappliances.co.uk/media/catalog/product/cache/1/thumbnail/1500x1500/9df78eab33525d08d6e5fb8d27136e95/w/t/wtf130.jpg" border="0" alt="bicicleta" style="width:100%">
       <h3><b>Home</b></h3>
       <p><em>Products to enjoy your home.</em></p>
-      <p><button class="w3-button w3-large w3-orange w3-text-white w3-block">Buy it!</button></p>
+     <p><a th:href="@{/product/{category}(category=home)}"  class="w3-button w3-large w3-orange w3-text-white w3-block">Filter</button></a></p>
     </div>
    <div class="w3-col l3 m6 w3-margin-bottom w3-center">
       
        <img src="https://www.altonsports.co.uk/wp-content/uploads/2018/11/polar-vantage-v-white-1500x1500.jpg" border="0" alt="bicicleta" style="width:100%">
       <h3><b>Watch</b></h3>
       <p><em>Your time always controlled.</em></p>
-      <p><button class="w3-button w3-large w3-orange w3-text-white w3-block">Buy it!</button></p>      
+      <p><a th:href="@{/product/{category}(category=watch)}"  class="w3-button w3-large w3-orange w3-text-white w3-block">Filter</button></a></p>     
     </div>
    <div class="w3-col l3 m6 w3-margin-bottom w3-center">
      
        <img src="https://www.pc-canada.com/dd2/img/item/A-1500x1500/983266-1.jpg" border="0" alt="bicicleta" style="width:100%">
       <h3><b>Computer</b></h3>
       <p><em>Create your own projects.</em></p>
-      <p><button class="w3-button w3-large w3-orange w3-text-white w3-block">Buy it!</button></p>
+      <p><a th:href="@{/product/{category}(category=computer)}"  class="w3-button w3-large w3-orange w3-text-white w3-block">Filter</button></a></p>
     </div>
   </div>
   
@@ -125,34 +125,35 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
         <img src="https://www.wesave.my/image/wesave/image/cache/data/all_product_images/product-1914/sony-ps4-pro-console-001-1500x1500.jpg" border="0" alt="bicicleta" style="width:100%">
       <h3><b>Game Console</b></h3>
       <p><em>Live your adventures in 4K.</em></p>
-    <p><button class="w3-button w3-large w3-orange w3-text-white w3-block">Buy</button></p>
+    <p><a th:href="@{/product/{category}(category=gameconsoles)}"  class="w3-button w3-large w3-orange w3-text-white w3-block">Filter</button></a></p>
     </div>
    <div class="w3-col l3 m6 w3-margin-bottom w3-center">
    
      <img src="https://www.ifixmobiles.ae/image/cache/catalog/Apple%20iPhone%20XS%20Max%20With%20Facetime%20-%20512GB,%204G%20LTE,%20Gold%203-1500x1500.jpg" border="0" alt="bicicleta" style="width:100%">
       <h3><b>Phones</b></h3>
       <p><em>Connecting people.</em></p>
-      <p><button class="w3-button w3-large w3-orange w3-text-white w3-block">Buy it!</button></p>
+      <p><a th:href="@{/product/{category}(category=phones)}"  class="w3-button w3-large w3-orange w3-text-white w3-block">Filter</button></a></p>
     </div>
    <div class="w3-col l3 m6 w3-margin-bottom w3-center">
       
         <img src="https://www.forall.com.gr/image/cache/catalog/podhlata%20new/18051-24-1500x1500.jpg" border="0" alt="bicicleta" style="width:100%">
       <h3><b>Sports</b></h3>
       <p><em>Keep calm and keep running.</em></p>
-      <p><button class="w3-button w3-large w3-orange w3-text-white w3-block">Buy it!</button></p>      
+     <p><a th:href="@{/product/{category}(category=sports)}"  class="w3-button w3-large w3-orange w3-text-white w3-block">Filter</button></a></p>      
     </div>
    <div class="w3-col l3 m6 w3-margin-bottom w3-center">
     
       <img src="https://camerastorestorage.blob.core.windows.net/70dbf2066dcc4220bfa96dbe9f4a86c9/Images/Products12747-1500x1500-373136.jpg" border="0" alt="bicicleta" style="width:100%">
       <h3><b>Cameras</b></h3>
       <p><em>Inmortalice your moments.</em></p>
-      <p><button class="w3-button w3-large w3-orange w3-text-white w3-block">Buy it!</button></p>
+      <p><a th:href="@{/product/{category}(category=cameras)}"  class="w3-button w3-large w3-orange w3-text-white w3-block">Filter</button></a></p>
   
     </div>
     
   </div>
  
   </div>
+
 <div class="w3-container w3-center" style="max-width:1200px;margin:auto">
 <table class="w3-table w3-center">
 <tr>
