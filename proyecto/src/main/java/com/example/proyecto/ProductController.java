@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 		product.setUser(user);
 		
 		service.insertProduct(product);
-		model.addAttribute("producto", product);
+		model.addAttribute("userproducts", product);
 		
 		//AÑADIR COMRPOBACION
 		return  "home/profile";
