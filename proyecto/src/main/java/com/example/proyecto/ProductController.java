@@ -26,11 +26,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 	}
 	
 	@RequestMapping("/addproduct")
-	public String insertProduct(Product product, Model model, HttpSession session) {
+	public String insertProduct(@RequestParam("name") String name,Product product, Model model, HttpSession session) {
 		User user = (User) session.getAttribute("sessionuser");		
-		product.setUser(user);
-		
+		product.setUser(user);			
 		service.insertProduct(product);
+		
 		model.addAttribute("userproducts", product);
 		
 		//AÑADIR COMRPOBACION
@@ -60,7 +60,7 @@ import org.springframework.web.bind.annotation.RequestParam;
     @GetMapping("/product/{category}")
     public String categoryVariable(@PathVariable ("category") String category, Model model) {
     	model.addAttribute("categoryproducts", service.findbyCategory(category));
-    	return "product/CategoryFilter";
+    	return "product/categoryfilter";
     }
 	
 	}

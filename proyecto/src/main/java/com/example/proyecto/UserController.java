@@ -31,6 +31,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 		
 		return "home/profile";
 	}
+
 	@RequestMapping("/login")
 	public String profile(HttpSession session, @RequestParam("email")String email, @RequestParam("password") String password, Model model) {
 		User user = service.findbyId(email);
