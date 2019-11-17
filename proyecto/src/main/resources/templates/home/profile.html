@@ -11,21 +11,14 @@
 html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 </style>
 <body class="w3-theme-l5">
-
-
+     
+<!-- CABECERA -->
 
 <div class="w3-top">
   <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">       
 
 
-
-
- <div class=" w3-right w3-large w3-padding-16"><a href="megapop" style="margin:20px">Logout</a></div>
-   
- <div class="w3-center w3-padding-16"><a title="Letras" href="megapop"><img src="https://i.ibb.co/MM5qtS3/Letras.jpg" alt="Letras" border="0"  style="width:10%"></a></div>
-     
-     
-<!--       <form  class="w3-row-padding w3-padding-16 w3-left" style="max-width:1200px;margin:auto"method="post" action="viewproducts" id="category" name="category">  
+      <form  class="w3-row-padding w3-padding-16 w3-left" style="max-width:1200px;margin:auto"method="post" action="viewproducts" id="category" name="category">  
 	<select name="category">
     <option value="" disabled selected>Category</option>
     <option value="tv">TV</option>
@@ -37,13 +30,21 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
     <option value="cameras">Cameras</option>
     <option value="watches">Watches</option>
   </select>
-  <button class="w3-btn w3-orange w3-text-white" type="submit">search</button>
+  <button class="w3-btn w3-orange w3-text-white w3-small" type="submit"><i class="fa fa-search"></i></button>
    </form>
+
+
+ <div class=" w3-right w3-large w3-padding-16"><a href="megapop" style="margin:20px">Logout</a></div>
+   
+ <div class="w3-center w3-padding-16"><a title="Letras" href="megapop"><img src="https://i.ibb.co/MM5qtS3/Letras.jpg" alt="Letras" border="0"  style="width:10%"></a></div>
+     
+     
+  
   </div>
 
 </div>
- -->
-</div></div>
+ 
+<!-- CUERPO PÁGINA -->
 
 <div class="w3-container w3-content" style="max-width:1200px;margin-top:100px">    
 
@@ -81,7 +82,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 		<td th:text="${product.name}"></td>
 		<td th:text="${product.description}"></td>
 		<td th:text="${product.price}"></td>		
- 		<td type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-search"></i>  Details</td>
+ 		<td><a th:href="@{findbyID(productId=${product.productId})}" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-search"></i>  Details</a></td>
 	</tr></p>
         
         

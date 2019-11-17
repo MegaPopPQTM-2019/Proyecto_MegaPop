@@ -63,12 +63,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 			 */
 				 
 				session.setAttribute("sessionuser", user);
-				
+				model.addAttribute("userproducts", user.getproducts());
 				return "home/profile";
 			}else {
 				return "home/login";
 			}
-		}}
+			
+		}
+		
+}
 	
 	
 	
