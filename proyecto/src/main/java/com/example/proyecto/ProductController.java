@@ -65,7 +65,14 @@ import org.springframework.web.bind.annotation.RequestParam;
     
     @RequestMapping("/findbyID")
     public String findbyId(@RequestParam ("productId") int productId, Model model) {
-    	Product product = new Product();
+    	
+    	service.findbyIdint(productId);
+    	model.addAttribute("profileproducts", service.findbyIdint(productId));
+    	return "product/detailsproduct";
+    }
+    @RequestMapping("/product/findbyID")
+    public String findbyIdcategory(@RequestParam ("productId") int productId, Model model) {
+    
     	service.findbyIdint(productId);
     	model.addAttribute("profileproducts", service.findbyIdint(productId));
     	return "product/detailsproduct";
