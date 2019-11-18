@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Home</title>
+<title>Details</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -86,7 +86,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 
 <p>
 <h4  class="w3-container w3-padding-16 w3-left" style="max-width:1200px;margin:auto;margin-top:80px" th:text="${profileproducts.description}"></h4> 
-Se encuentra en:<h4  class="w3-container w3-padding-16 w3-left" style="max-width:1200px;margin:auto;margin-top:80px" th:text="${profileproducts.user.city}"></h4>
+<h4  class="w3-container w3-padding-16 w3-right" style="max-width:1200px;margin:auto;margin-top:80px" th:text="${profileproducts.price}"></h4>
+<h4  class="w3-container w3-padding-16 w3-center" style="max-width:1200px;margin:auto;margin-top:80px" th:text="${profileproducts.stockquantity}"></h4>
+<h4  class="w3-container w3-padding-16 w3-left" style="max-width:1200px;margin:auto;margin-top:80px" th:text="${profileproducts.user.city}"></h4>
 
 </div>
 <hr>

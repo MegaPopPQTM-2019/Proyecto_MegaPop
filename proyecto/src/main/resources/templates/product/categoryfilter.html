@@ -39,7 +39,7 @@
     
 
   <div id="id01" class="w3-modal">
-    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+    <div class="w3-modal-content w3-card-4 w3-animate-top" style="max-width:600px">
 
       <div class="w3-center"><br>
 
@@ -95,8 +95,26 @@
 		<td th:text="${product.price}"></td>
 
             
-<td><a th:href="@{findbyID(productId=${product.productId})}"  
-               class="w3-text-blue">DETAIL</a></td>
+ <td><button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-orange w3-text-white"><i class="fa fa-search"></i>Details</button></td>
+             
+             <div id="id02" class="w3-modal">
+    <div class="w3-modal-content">
+      <header class="w3-container w3-orange"> 
+        <span onclick="document.getElementById('id02').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+        <h2 class="w3-left w3-text-white">Product details</h2>
+      </header>
+      <div class="w3-container">
+        <p th:text="${product.name}"></p>
+        <p th:text="${product.description}"></p>
+         <p th:text="${product.stockquantity}"></p>
+      </div>
+      <footer class="w3-container w3-orange w3-text-white">
+        <p th:text="${product.user.city}"></p>
+      </footer>
+    </div>
+  </div>
+</div>
 
 
 	</tr>
@@ -106,3 +124,5 @@
 
 </body>
 </html>
+
+<!-- <td><a th:href="@{findbyID(productId=${product.productId})}"   -->
