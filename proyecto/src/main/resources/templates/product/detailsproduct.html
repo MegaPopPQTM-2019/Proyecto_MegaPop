@@ -81,10 +81,14 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 
 <p>
 
-<h2 class="w3-left"th:text="${profileproducts.name}"> </h2>
+<h2 class="w3-container w3-padding-16 w3-left" style="max-width:1200px;margin:auto;margin-top:80px" th:text="${profileproducts.name}"> </h2>
 
+
+<p>
+<h4  class="w3-container w3-padding-16 w3-left" style="max-width:1200px;margin:auto;margin-top:80px" th:text="${profileproducts.description}"></h4> 
+Se encuentra en:<h4  class="w3-container w3-padding-16 w3-left" style="max-width:1200px;margin:auto;margin-top:80px" th:text="${profileproducts.user.city}"></h4>
+
+</div>
 <hr>
-<h4 th:text="${profileproducts.description}"></h4> 
-</div></div></div>
 </body>
 </html> 

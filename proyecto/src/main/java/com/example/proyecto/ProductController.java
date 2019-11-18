@@ -46,16 +46,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 	  }
 	 
 	
-    @RequestMapping("/detailproduct")
-	public String detailProduct (@RequestParam("productid") int id, Model model) {
-		
-    	
-		Product productOp = service.findbyIdint(id);
-		
-			
-		model.addAttribute("producto",productOp);
-		return "product/detailsproduct";
-	}
+	/*
+	 * @RequestMapping("/detailproduct") public String detailProduct
+	 * (@RequestParam("productid") int id, Model model) {
+	 * 
+	 * 
+	 * Product productOp = service.findbyIdint(id); User user = new
+	 * User(service.findbyEmail(productOp.getUser());
+	 * 
+	 * model.addAttribute("producto",productOp); return "product/detailsproduct"; }
+	 */
     
     @GetMapping("/{category}")
     public String categoryVariable(@PathVariable ("category") String category, Model model) {
@@ -67,7 +67,9 @@ import org.springframework.web.bind.annotation.RequestParam;
     public String findbyId(@RequestParam ("productId") int productId, Model model) {
     	
     	service.findbyIdint(productId);
+	
     	model.addAttribute("profileproducts", service.findbyIdint(productId));
+    	
     	return "product/detailsproduct";
     }
     @RequestMapping("/product/findbyID")
