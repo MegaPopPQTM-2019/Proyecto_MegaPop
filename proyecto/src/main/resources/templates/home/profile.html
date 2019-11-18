@@ -58,7 +58,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
          <h4 class="w3-center" th:text="${session.sessionuser.lastname}"></h4>
           <div th:with="userimage = ${session.sessionuser.image}"> 
    
-        <p class="w3-center"><img th:src="@{'http://localhost:8080/webapi/user/'+ ${userimage}}" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p> 
+       <!--  <p class="w3-center"><img th:src="@{'http://localhost:8080/webapi/user/'+ ${userimage}}" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>  -->
          
          </div><hr>
         <p><i class="fa fa-male fa-fw w3-margin-right w3-text-theme"></i> <th:block  th:text="${session.sessionuser.email}"/></p>
