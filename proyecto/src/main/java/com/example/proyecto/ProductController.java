@@ -57,7 +57,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 		return "product/detailsproduct";
 	}
     
-    @GetMapping("/product/{category}")
+    @GetMapping("/{category}")
     public String categoryVariable(@PathVariable ("category") String category, Model model) {
     	model.addAttribute("categoryproducts", service.findbyCategory(category));
     	return "product/categoryfilter";

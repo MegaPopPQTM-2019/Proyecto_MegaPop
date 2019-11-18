@@ -25,10 +25,7 @@ public class HomeController {
 		return "register/userRegister";
 	}
 	
-	@GetMapping("home")
-	public String index() {
-		return "home/index.html";
-	}
+
 	
 	@GetMapping("cart")
 	public String cart() {
