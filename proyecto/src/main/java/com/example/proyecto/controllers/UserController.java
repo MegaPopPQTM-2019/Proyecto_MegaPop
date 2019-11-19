@@ -1,4 +1,4 @@
-package com.example.proyecto;
+package com.example.proyecto.controllers;
 
 
 
@@ -10,6 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.proyecto.models.User;
+import com.example.proyecto.services.ProductService;
+import com.example.proyecto.services.UserService;
 
 @Controller
 

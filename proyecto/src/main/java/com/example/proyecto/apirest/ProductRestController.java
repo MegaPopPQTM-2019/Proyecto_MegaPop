@@ -1,44 +1,44 @@
-package com.example.proyecto;
+package com.example.proyecto.apirest;
 
 import java.sql.SQLException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.http.MediaType;
+
+import com.example.proyecto.models.Product;
+import com.example.proyecto.repositorys.ProductRepository;
 
 @RestController
 @RequestMapping("/webapi")
 
-public class UserRestController {
+public class ProductRestController {
 
 	
 	@Autowired
-	UserRepository repository;
+	ProductRepository repository;
 	
-	@PostMapping(path = "/users", consumes = "application/json")
-	public void insertUser(@RequestBody User user) {
+	@PostMapping(path = "/products", consumes = "application/json")
+	public void insertProduct(@RequestBody Product product) {
 
-		repository.save(user);
+		repository.save(product);
 	}
 	
-	@GetMapping("/user/{email}")
+	@GetMapping("/products/{email}")
 	public ResponseEntity<byte[]> findImage (@PathVariable("email") String email) throws SQLException {
 
-		Optional<User> user = repository.findById(email);
+		Optional<Product> product = repository.findbyIEmail(email);
 		byte[] imageBytes = null;
-		if (user.isPresent()) {
+		if (product.isPresent()) {
 			
-			imageBytes= user.get().getImage().getBytes(1,(int)user.get().getImage().length());
+			imageBytes= product.get().getPhoto().getBytes(1,(int)product.get().getPhoto().length());
 		}
 
 		return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imageBytes);
@@ -46,5 +46,3 @@ public class UserRestController {
 	
 
 }
-
-

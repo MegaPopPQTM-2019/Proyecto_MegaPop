@@ -1,4 +1,4 @@
-package com.example.proyecto;
+package com.example.proyecto.models;
 
 
 import java.sql.Blob;
@@ -13,7 +13,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 
 import lombok.Data;
 

@@ -1,9 +1,12 @@
 
-package com.example.proyecto;
+package com.example.proyecto.services;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.example.proyecto.models.User;
+import com.example.proyecto.repositorys.UserRepository;
 
 
 @Service

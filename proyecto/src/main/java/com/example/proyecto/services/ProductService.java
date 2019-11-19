@@ -1,10 +1,13 @@
 
-package com.example.proyecto;
+package com.example.proyecto.services;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.example.proyecto.models.Product;
+import com.example.proyecto.repositorys.ProductRepository;
 
 
 
