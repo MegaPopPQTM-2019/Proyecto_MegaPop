@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<title>Details</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+<body>
+
+
+<!-- Cabecera -->
+
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">       
+
+
+      <form  class="w3-row-padding w3-padding-16 w3-left" style="max-width:1200px;margin:auto"method="post" action="viewproducts" id="category" name="category">  
+	<select name="category">
+    <option value="" disabled selected>Category</option>
+    <option value="tv">TV</option>
+    <option value="home">Home</option>
+    <option value="phones">Phones</option>
+    <option value="computer">Computer</option>
+    <option value="gameconsoles">Game Consoles</option>
+    <option value="sports">Sports</option>
+    <option value="cameras">Cameras</option>
+    <option value="watches">Watches</option>
+  </select>
+  <button class="w3-btn w3-orange w3-text-white w3-small" type="submit"><i class="fa fa-search"></i></button>
+   </form>
+
+
+
+
+
+     <div  class="w3-button w3-right w3-orange w3-text-white w3-large"onclick="document.getElementById('id01').style.display='block'">Login</div>
+    
+
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+      <div class="w3-center"><br>
+
+  <form class="w3-container" action="login">
+        <div class="w3-section">
+          <label for="email"><b>Email</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="email" id="email" required>
+         <label for="password"><b>Password</b></label>
+          <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="password"  id="password" required>
+          <button class="w3-button w3-block w3-light-blue w3-section w3-padding" style="color:white" type="submit">Login</button>
+          
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-right w3-red">Cancel</button>
+       
+      </div>
+</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+ <div class=" w3-right w3-large w3-padding-16 margin:20px"><a href="register">Register</a></div>
+   <div class="w3-center w3-padding-16"><a title="Letras" href="megapop"><img src="https://i.ibb.co/MM5qtS3/Letras.jpg" alt="Letras" border="0"  style="width:10%"></a></div>
+   
+  </div>
+   
+</div>
+ <p> 
+<!-- Cuerpo Pagina -->
+
+
+<div class="w3-container w3-padding-16 w3-center" style="max-width:1200px;margin:auto;margin-top:80px">
+	
+	PONER IMAGEN AQUI EN GRANDE
+
+<p>
+
+<h2 class="w3-container w3-padding-16 w3-left" style="max-width:1200px;margin:auto;margin-top:80px" th:text="${profileproducts.name}"> </h2>
+
+
+<p>
+<h4  class="w3-container w3-padding-16 w3-left" style="max-width:1200px;margin:auto;margin-top:80px" th:text="${profileproducts.description}"></h4> 
+<h4  class="w3-container w3-padding-16 w3-right" style="max-width:1200px;margin:auto;margin-top:80px" th:text="${profileproducts.price}"></h4>
+<h4  class="w3-container w3-padding-16 w3-center" style="max-width:1200px;margin:auto;margin-top:80px" th:text="${profileproducts.stockquantity}"></h4>
+<h4  class="w3-container w3-padding-16 w3-left" style="max-width:1200px;margin:auto;margin-top:80px" th:text="${profileproducts.user.city}"></h4>
+
+</div>
+<hr>
+</body>
+</html> 

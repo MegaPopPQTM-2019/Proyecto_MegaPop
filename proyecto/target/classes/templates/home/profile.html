@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<title>Profile</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+</style>
+<body class="w3-theme-l5">
+     
+<!-- CABECERA -->
+
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">       
+
+
+      <form  class="w3-row-padding w3-padding-16 w3-left" style="max-width:1200px;margin:auto"method="post" action="viewproducts" id="category" name="category">  
+	<select name="category">
+    <option value="" disabled selected>Category</option>
+    <option value="tv">TV</option>
+    <option value="home">Home</option>
+    <option value="phones">Phones</option>
+    <option value="computer">Computer</option>
+    <option value="gameconsoles">Game Consoles</option>
+    <option value="sports">Sports</option>
+    <option value="cameras">Cameras</option>
+    <option value="watches">Watches</option>
+  </select>
+  <button class="w3-btn w3-orange w3-text-white w3-small" type="submit"><i class="fa fa-search"></i></button>
+   </form>
+
+
+ <div class=" w3-right w3-large w3-padding-16"><a href="megapop" style="margin:20px">Logout</a></div>
+   
+ <div class="w3-center w3-padding-16"><a title="Letras" href="megapop"><img src="https://i.ibb.co/MM5qtS3/Letras.jpg" alt="Letras" border="0"  style="width:10%"></a></div>
+     
+     
+  
+  </div>
+
+</div>
+ 
+<!-- CUERPO PÁGINA -->
+
+<div class="w3-container w3-content" style="max-width:1200px;margin-top:100px">    
+
+
+    <!-- Left Column -->
+    <div class="w3-col m3">
+      <!-- Profile -->
+      <div class="w3-card w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center" th:text="${session.sessionuser.firstname}"></h4>
+         <h4 class="w3-center" th:text="${session.sessionuser.lastname}"></h4>         
+          <div th:with="userimage = ${session.sessionuser.email}"> 
+   <!-- <img th:src="@{'http://localhost:8080/webapi/user/' + ${userimage}}"  alt="bookplaceholder" style="width:200px" >  --> 
+         
+         </div><hr>
+        <p><i class="fa fa-male fa-fw w3-margin-right w3-text-theme"></i> <th:block  th:text="${session.sessionuser.email}"/></p>
+        <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> <th:block  th:text="${session.sessionuser.address}"/></p>
+         <p><i class="fa fa-plane fa-fw w3-margin-right w3-text-theme"></i> <th:block  th:text="${session.sessionuser.city}"/>, <th:block  th:text="${session.sessionuser.country}"/> </p>
+       <div class="w3-btn w3-text-white w3-orange"><a href="newproduct">Add new Product</a></p>
+        </div>
+      </div>
+      <br>
+</div>
+
+      </div>
+      <div class="w3-col m7">
+            <div class="w3-container w3-card w3-white w3-round w3-margin">
+        <!-- AQUI TIENE QUE VENIR LA IMAGEN!! <img src="/w3images/avatar5.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style=""> -->
+        <!-- aQUI LA CATEGORY <span class="w3-right w3-opacity">16 min</span> -->
+        <h4>Product list of <th:block  th:text="${session.sessionuser.firstname}"/></h4><br>
+        <hr class="w3-clear">
+        <p><table>
+	<tr th:each="product:${userproducts}">
+		<td th:text="${product.name}"></td>
+		<td th:text="${product.description}"></td>
+		<td th:text="${product.price}"></td>	
+		<td th:text="${product.ordered}"></td>
+		<td th:text="${product.sold}"></td>	
+ 		<td><a th:href="@{deleteProduct(productId=${product.productId})}" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-trash"></i>Delete</a></td>
+ 		<td><a th:href="@{soldProduct(productId=${product.productId})}" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-trash"></i>Do you want to sold?</a></td>
+	</tr></p>
+        
+        
+        
+       </table>
+      </div>  </div></div>
+
+</body>
+</html>
+
+
+
+
+
+
+
