@@ -51,10 +51,10 @@ public class Product {
 	@Column(name = "ordered")
     private boolean ordered;
 	@Column(name = "sold")
-	private boolean sold;
-	/*
-	 * @Column(name = "photo") private Blob photo;
-	 */
+	private boolean sold;	
+	@Column(name = "photo")
+	private Blob photo;
+	 
     
 	@ManyToOne
 	@JoinColumn(name="email")
@@ -206,13 +206,13 @@ public class Product {
 
 
 
-	/*
-	 * public Blob getPhoto() { return photo; }
-	 * 
-	 * 
-	 * 
-	 * public void setPhoto(Blob photo) { this.photo = photo; }
-	 */
+	
+	  public Blob getPhoto() { return photo; }
+	  
+	  
+	  
+	  public void setPhoto(Blob photo) { this.photo = photo; }
+	 
 
 
 

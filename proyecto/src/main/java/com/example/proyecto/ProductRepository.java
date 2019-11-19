@@ -18,5 +18,8 @@ public interface ProductRepository  extends CrudRepository<Product, String> {
 	
 	@Query("select u from Product u where u.id = ?1")
 	public Product findbyIdint(int id);
+	
+	@Query("select u from Product u where u.email = ?1")
+	public Optional<Product> findbyIEmail(String email);
 
 }

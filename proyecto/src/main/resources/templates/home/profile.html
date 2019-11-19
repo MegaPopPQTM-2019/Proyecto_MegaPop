@@ -55,10 +55,9 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
       <div class="w3-card w3-round w3-white">
         <div class="w3-container">
          <h4 class="w3-center" th:text="${session.sessionuser.firstname}"></h4>
-         <h4 class="w3-center" th:text="${session.sessionuser.lastname}"></h4>
-         <h4 class="w3-center" th:text="${session.sessionuser.email}"></h4>
-          <!-- <div th:with="userimage = ${session.sessionuser.email}"> -->
-   <img th:src="@{'http://localhost:8080/webapi/user/' + ${session.sessionuser.email}}"  alt="bookplaceholder" style="width:200px" >  
+         <h4 class="w3-center" th:text="${session.sessionuser.lastname}"></h4>         
+          <div th:with="userimage = ${session.sessionuser.email}"> 
+   <img th:src="@{'http://localhost:8080/webapi/user/' + ${userimage}}"  alt="bookplaceholder" style="width:200px" >  
          
          </div><hr>
         <p><i class="fa fa-male fa-fw w3-margin-right w3-text-theme"></i> <th:block  th:text="${session.sessionuser.email}"/></p>
