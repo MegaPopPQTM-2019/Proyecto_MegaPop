@@ -40,8 +40,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 		if(null != user && user.getPassword().contentEquals(password)) {	
 			
 			session.setAttribute("sessionuser", user);
-			Iterable<Product> products = pservice.findbyEmail(email);
-			model.addAttribute("userproducts", products);
+			
+			model.addAttribute("userproducts", user.getproducts());
 			return "home/profile";
 		}else {
 			return "home/login";
