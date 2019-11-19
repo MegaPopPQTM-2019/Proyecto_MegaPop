@@ -80,8 +80,11 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 	<tr th:each="product:${userproducts}">
 		<td th:text="${product.name}"></td>
 		<td th:text="${product.description}"></td>
-		<td th:text="${product.price}"></td>		
+		<td th:text="${product.price}"></td>	
+		<td th:text="${product.ordered}"></td>
+		<td th:text="${product.sold}"></td>	
  		<td><a th:href="@{deleteProduct(productId=${product.productId})}" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-trash"></i>Delete</a></td>
+ 		<td><a th:href="@{soldProduct(productId=${product.productId})}" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-trash"></i>Do you want to sold?</a></td>
 	</tr></p>
         
         

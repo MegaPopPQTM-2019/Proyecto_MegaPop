@@ -85,22 +85,38 @@ import org.springframework.web.bind.annotation.RequestParam;
     
 
     @RequestMapping("/deleteProduct")
-    public String deleteProduct(@RequestParam("productId") int productId, Model model) {
+    public String deleteProduct(@RequestParam("productId") int productId, HttpSession session, Model model) {
         
       Product product= new Product(productId);
-        
+       User user = (User) session.getAttribute("sessionuser");
+       String email = user.getEmail();
         service.deleteProduct(product);
-        model.addAttribute("userproducts",service.findAll());
+        Iterable<Product> products = service.findbyEmail(email);
+        model.addAttribute("userproducts",products);
         
         return "home/profile";
     }
     
     @RequestMapping("/orderProduct")
     public String orderProduct(@RequestParam("productId") int productId, Model model) {
-    	Product product = new Product(productId);
-    	service.findbyIdint(productId);
+    	Product product = service.findbyIdint(productId);    	
     	product.setOrdered(true);
+    	service.insertProduct(product);
+    	String category = product.getCategory();
+    	model.addAttribute("categoryproducts", service.findbyCategory(category));
     	return "product/categoryfilter";
+    }
+    
+    @RequestMapping("/soldProduct")
+    public String soldProduct(@RequestParam("productId") int productId,HttpSession session, Model model) {
+    	Product product = service.findbyIdint(productId);    	
+    	product.setSold(true);
+    	service.insertProduct(product);
+    	User user = (User) session.getAttribute("sessionuser");
+    	String email = user.getEmail();
+		Iterable<Product> products = service.findbyEmail(email);
+		model.addAttribute("userproducts", products);
+    	return "home/profile";
     }
 	
 	}
