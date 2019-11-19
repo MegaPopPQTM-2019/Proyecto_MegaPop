@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
+
 @Controller
 
 	public class ProductController {
@@ -64,21 +66,41 @@ import org.springframework.web.bind.annotation.RequestParam;
     	return "product/categoryfilter";
     }
     
-    @RequestMapping("/findbyID")
-    public String findbyId(@RequestParam ("productId") int productId, Model model) {
-    	
-    	service.findbyIdint(productId);
-	
-    	model.addAttribute("profileproducts", service.findbyIdint(productId));
-    	
-    	return "product/detailsproduct";
-    }
-    @RequestMapping("/product/findbyID")
-    public String findbyIdcategory(@RequestParam ("productId") int productId, Model model) {
+	/*
+	 * @RequestMapping("/findbyID") public String findbyId(@RequestParam
+	 * ("productId") int productId, Model model) {
+	 * 
+	 * service.findbyIdint(productId);
+	 * 
+	 * model.addAttribute("profileproducts", service.findbyIdint(productId));
+	 * 
+	 * return "product/detailsproduct"; }
+	 * 
+	 * @RequestMapping("/product/findbyID") public String
+	 * findbyIdcategory(@RequestParam ("productId") int productId, Model model) {
+	 * 
+	 * service.findbyIdint(productId); model.addAttribute("profileproducts",
+	 * service.findbyIdint(productId)); return "product/detailsproduct"; }
+	 */
     
+
+    @RequestMapping("/deleteProduct")
+    public String deleteProduct(@RequestParam("productId") int productId, Model model) {
+        
+      Product product= new Product(productId);
+        
+        service.deleteProduct(product);
+        model.addAttribute("userproducts",service.findAll());
+        
+        return "home/profile";
+    }
+    
+    @RequestMapping("/orderProduct")
+    public String orderProduct(@RequestParam("productId") int productId, Model model) {
+    	Product product = new Product(productId);
     	service.findbyIdint(productId);
-    	model.addAttribute("profileproducts", service.findbyIdint(productId));
-    	return "product/detailsproduct";
+    	product.setOrdered(true);
+    	return "product/categoryfilter";
     }
 	
 	}

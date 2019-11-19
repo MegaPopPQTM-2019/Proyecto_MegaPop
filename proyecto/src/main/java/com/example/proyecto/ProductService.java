@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+
+
 @Service
 public class ProductService {
 
@@ -35,5 +37,9 @@ public class ProductService {
 		
 		return repository.findbyEmail(email);
 	}
-
+	
+	 public void deleteProduct(Product product) {
+	        
+	        repository.delete(product);
+	    }
 	}

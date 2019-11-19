@@ -42,8 +42,6 @@ public class Product {
     private String name;
 	@Column(name = "description")
     private String description;
-	@Column(name = "stockquantity")
-    private int stockquantity;
 	@Column(name = "category")
     private String category;
 	@Column(name = "price")
@@ -58,11 +56,7 @@ public class Product {
     
 	@ManyToOne
 	@JoinColumn(name="email")
-	private User email;
-	
-   
-	/*@OneToMany(mappedBy = "product",  cascade = CascadeType.ALL)
-	private Set<UserProduct> userProducts = new HashSet<>();*/
+	private User email;   
 
 
 
@@ -75,15 +69,16 @@ public class Product {
 		this.name=name;
 	}
 	
+	public Product(int productId) {
+		super();
+		this.productId = productId;
+	}
 	
 	
-	public Product(String name, String description, int stockquantity, double price) {
+	public Product(String name, String description, double price) {
 		super();		
 		this.name = name;
-		this.description = description;
-		this.stockquantity = stockquantity;
-		//NO RECIBE LA CATEGORIA PONEMOS HOME PARA PROBAR
-		this.category = "home";
+		this.description = description;	
 		this.price = price;
 		//TODAVIA NO USAREMOS ESTOS CAMPOS, SON PARA LA GESTION DE VENTAS
 		this.ordered = false;
@@ -91,7 +86,7 @@ public class Product {
 		/* this.photo = photo; */
 		//USUARIO NULL HASTA QUE PODAMOS RELACIONARLO CON SESSION
 		this.email = null;
-				//session.getAttribute(sessionuser); 
+				
 
 	}
 
@@ -129,18 +124,6 @@ public class Product {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-
-
-	public int getStockquantity() {
-		return stockquantity;
-	}
-
-
-
-	public void setStockQuantity(int stockquantity) {
-		this.stockquantity = stockquantity;
 	}
 
 
@@ -200,7 +183,7 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", name=" + name + ", description=" + description
-				+ ", stockQuantity=" + stockquantity + ", category=" + category + ", price=" + price + ", ordered="
+				+ ", stockQuantity=" + ", category=" + category + ", price=" + price + ", ordered="
 				+ ordered + ", sold=" + sold + ", user=" + email + "]";
 	}
 
@@ -213,14 +196,5 @@ public class Product {
 	  
 	  public void setPhoto(Blob photo) { this.photo = photo; }
 	 
-
-
-
-
-
-
-    
-  //@OnDelete(action = OnDeleteAction.CASCADE)
-    
 	
 }

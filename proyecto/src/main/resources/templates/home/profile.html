@@ -63,7 +63,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
         <p><i class="fa fa-male fa-fw w3-margin-right w3-text-theme"></i> <th:block  th:text="${session.sessionuser.email}"/></p>
         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> <th:block  th:text="${session.sessionuser.address}"/></p>
          <p><i class="fa fa-plane fa-fw w3-margin-right w3-text-theme"></i> <th:block  th:text="${session.sessionuser.city}"/>, <th:block  th:text="${session.sessionuser.country}"/> </p>
-       <div class="w3-button w3-block w3-text-white w3-orange"><a href="newproduct">Add new Product</a></p>
+       <div class="w3-btn w3-text-white w3-orange"><a href="newproduct">Add new Product</a></p>
         </div>
       </div>
       <br>
@@ -81,7 +81,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 		<td th:text="${product.name}"></td>
 		<td th:text="${product.description}"></td>
 		<td th:text="${product.price}"></td>		
- 		<td><a th:href="@{findbyID(productId=${product.productId})}" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-search"></i>  Details</a></td>
+ 		<td><a th:href="@{deleteProduct(productId=${product.productId})}" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-trash"></i>Delete</a></td>
 	</tr></p>
         
         
