@@ -38,7 +38,7 @@ public class UserRestController {
 		byte[] imageBytes = null;
 		if (user.isPresent()) {
 			
-			imageBytes = user.get().getImage();
+			imageBytes= user.get().getImage().getBytes(1,(int)user.get().getImage().length());
 		}
 
 		return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imageBytes);
