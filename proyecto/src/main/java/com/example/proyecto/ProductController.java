@@ -30,8 +30,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 		User user = (User) session.getAttribute("sessionuser");		
 		product.setUser(user);			
 		service.insertProduct(product);
-		
-		model.addAttribute("userproducts", product);
+		String email = user.getEmail();
+		Iterable<Product> products = service.findbyEmail(email);
+		model.addAttribute("userproducts", products);
 		
 		//AÑADIR COMRPOBACION
 		return  "home/profile";

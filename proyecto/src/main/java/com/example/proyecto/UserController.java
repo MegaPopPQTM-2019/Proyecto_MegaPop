@@ -28,7 +28,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 	@RequestMapping("/register")
 	public String insertRegister(HttpSession session, User user, Model model) {
 		service.insertUser(user);
-		model.addAttribute("usuarios", service.findAll());
 		session.setAttribute("sessionuser", user);
 		//AÑADIR COMRPOBACION
 		
@@ -39,15 +38,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 	public String profile(HttpSession session, @RequestParam("email")String email, @RequestParam("password") String password, Model model) {
 		User user = service.findbyId(email);
 		if(null != user && user.getPassword().contentEquals(password)) {	
-			/* model.addAttribute("userproducts",pservice.findbyEmail(email)); 
-			 * 
-			 */
-			/*
-			 * session.setAttribute("userproducts", pservice.findbyEmail(user.getEmail()));
-			 */
+			
 			session.setAttribute("sessionuser", user);
-			//System.out.println(pservice.findbyEmail(email));
-			model.addAttribute("userproducts", user.getproducts());
+			Iterable<Product> products = pservice.findbyEmail(email);
+			model.addAttribute("userproducts", products);
 			return "home/profile";
 		}else {
 			return "home/login";
