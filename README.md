@@ -23,6 +23,9 @@ Mockups in Balsamiq allow us to make diagrams of how we want the user to see our
 We thing about techniques improvements in MEGAPOP code:
 
 -Google Maps API to find users.
+
 -Create a chat for users could send messages to meet and sell their products.
+
 -Upload images of your products.
+
 -Change the language on the web.
