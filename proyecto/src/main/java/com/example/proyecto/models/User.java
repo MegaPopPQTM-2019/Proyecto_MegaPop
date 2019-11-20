@@ -11,8 +11,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.apache.tomcat.util.codec.binary.Base64;
 
 import lombok.Data;
 
@@ -42,7 +45,8 @@ public class User {
 	@Column(name="confpassword")
 	private String confpassword;
 	
-	@Column(name="image")	
+	@Column(name="image")
+	@Lob
 	private Blob image;
 	
 	
@@ -165,7 +169,6 @@ public class User {
 	public void setImage(Blob image) {
 		this.image = image;
 	}
-
 
 
 

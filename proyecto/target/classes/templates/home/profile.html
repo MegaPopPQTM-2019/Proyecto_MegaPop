@@ -57,7 +57,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
          <h4 class="w3-center" th:text="${session.sessionuser.firstname}"></h4>
          <h4 class="w3-center" th:text="${session.sessionuser.lastname}"></h4>         
           <div th:with="userimage = ${session.sessionuser.email}"> 
-   <!-- <img th:src="@{'http://localhost:8080/webapi/user/' + ${userimage}}"  alt="bookplaceholder" style="width:200px" >  --> 
+    <img th:src="@{'http://localhost:8080/webapi/user/' + ${userimage}}"  alt="bookplaceholder" style="width:200px" >
          
          </div><hr>
         <p><i class="fa fa-male fa-fw w3-margin-right w3-text-theme"></i> <th:block  th:text="${session.sessionuser.email}"/></p>
@@ -77,14 +77,25 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
         <h4>Product list of <th:block  th:text="${session.sessionuser.firstname}"/></h4><br>
         <hr class="w3-clear">
         <p><table>
+        <thead>
+      <tr class="w3-teal">
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Ordered</th>
+        <th>Sold</th>
+       
+      </tr>
+    </thead>
+        
 	<tr th:each="product:${userproducts}">
 		<td th:text="${product.name}"></td>
 		<td th:text="${product.description}"></td>
 		<td th:text="${product.price}"></td>	
 		<td th:text="${product.ordered}"></td>
 		<td th:text="${product.sold}"></td>	
- 		<td><a th:href="@{deleteProduct(productId=${product.productId})}" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-trash"></i>Delete</a></td>
- 		<td><a th:href="@{soldProduct(productId=${product.productId})}" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-trash"></i>Do you want to sold?</a></td>
+ 		<td><a th:href="@{deleteProduct(productId=${product.productId})}"  class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-trash"></i>Delete</a></td>
+ 		<td><a th:href="@{soldProduct(productId=${product.productId})}"  class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-truck"></i>Sold?</a></td>
 	</tr></p>
         
         
