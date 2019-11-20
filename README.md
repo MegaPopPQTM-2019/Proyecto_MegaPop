@@ -11,5 +11,5 @@ To do this project we have used Spring Boot, Thymeleaf, JPA, H2 and an API REST 
 A diagram  to understand the functionalities in our program.
 
 # Mockup - Balsamiq
-https://raw.githubusercontent.com/MegaPopPQTM-2019/Proyecto_Megapop/Marc/README_FILES/Mockup1.PNG
+![alt text](https://raw.githubusercontent.com/MegaPopPQTM-2019/Proyecto_Megapop/Marc/README_FILES/Mockup1.PNG)
 
