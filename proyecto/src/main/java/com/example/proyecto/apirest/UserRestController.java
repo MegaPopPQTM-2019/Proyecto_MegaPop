@@ -37,15 +37,17 @@ public class UserRestController {
 		repository.save(user);
 	}
 	
-	@RequestMapping(value="/user/{email}", method = RequestMethod.GET, consumes = MediaType.ALL_VALUE)
-	public ResponseEntity findImage (@PathVariable("email") String email, HttpServletResponse response) {
+	@GetMapping("/user/{email}")
+	public ResponseEntity<byte[]> findImage (@PathVariable("email") String email) throws SQLException {
 
 		Optional<User> user = repository.findById(email);
-		byte[] imageBytes = user.get().getImage();
-		
-		response.setContentType(MediaType.IMAGE_JPEG_VALUE);
+		byte[] imageBytes = null;
+		if (user.isPresent()) {
+			
+			imageBytes= user.get().getImage().getBytes(1,(int)user.get().getImage().length());
+		}
 
-		return ResponseEntity.ok(imageBytes);
+		return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imageBytes);
 	}
 	
 

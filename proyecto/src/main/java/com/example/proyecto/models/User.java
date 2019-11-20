@@ -11,6 +11,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -44,8 +45,9 @@ public class User {
 	@Column(name="confpassword")
 	private String confpassword;
 	
-	@Column(name="image")	
-	private byte[] image;
+	@Column(name="image")
+	@Lob
+	private Blob image;
 	
 	
 	
@@ -160,11 +162,11 @@ public class User {
 		return "User email=" + email ;
 	}
 
-	public byte[] getImage() {
+	public Blob getImage() {
 		return image;
 	}
 
-	public void setImage(byte[] image) {
+	public void setImage(Blob image) {
 		this.image = image;
 	}
 

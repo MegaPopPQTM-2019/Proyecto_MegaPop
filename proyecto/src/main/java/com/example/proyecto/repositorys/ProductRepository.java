@@ -12,8 +12,10 @@ import com.example.proyecto.models.Product;
 
 
 public interface ProductRepository  extends CrudRepository<Product, String> {
-	@Query("select u from Product u where u.category = ?1")
-	public Iterable<Product> findbyCategory(String category);
+	/*
+	 * @Query("select u from Product u where u.category = ?1") public
+	 * Iterable<Product> findbyCategory(String category);
+	 */
 
 	@Query("select u from Product u where u.email.email = ?1")
 	public Iterable<Product> findbyEmail(String email);
@@ -24,4 +26,6 @@ public interface ProductRepository  extends CrudRepository<Product, String> {
 	@Query("select u from Product u where u.email = ?1")
 	public Optional<Product> findbyIEmail(String email);
 
+	@Query("select u from Product u where u.category = ?1 and u.ordered = false")
+	public Iterable<Product> findbyCategory(String category);
 }
