@@ -3,6 +3,8 @@ package com.example.proyecto.apirest;
 import java.sql.SQLException;
 import java.util.Optional;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.ResponseEntity;
@@ -35,17 +37,15 @@ public class UserRestController {
 		repository.save(user);
 	}
 	
-	@GetMapping("/user/{email}")
-	public ResponseEntity<byte[]> findImage (@PathVariable("email") String email) throws SQLException {
+	@RequestMapping(value="/user/{email}", method = RequestMethod.GET, consumes = MediaType.ALL_VALUE)
+	public ResponseEntity findImage (@PathVariable("email") String email, HttpServletResponse response) {
 
 		Optional<User> user = repository.findById(email);
-		byte[] imageBytes = null;
-		if (user.isPresent()) {
-			
-			imageBytes= user.get().getImage().getBytes(1,(int)user.get().getImage().length());
-		}
+		byte[] imageBytes = user.get().getImage();
+		
+		response.setContentType(MediaType.IMAGE_JPEG_VALUE);
 
-		return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imageBytes);
+		return ResponseEntity.ok(imageBytes);
 	}
 	
 
