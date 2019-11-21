@@ -20,6 +20,9 @@ Mockups in Balsamiq allow us to make diagrams of how we want the user to see our
 
 ![alt text](https://raw.githubusercontent.com/MegaPopPQTM-2019/Proyecto_Megapop/Marc/README_FILES/Mockup3.PNG)
 
+# Functional Specification
+https://raw.githubusercontent.com/MegaPopPQTM-2019/Proyecto_Megapop/Marc/README_FILES/Especificación_funcional_Megapop.pdf
+
 # 2.0 version
 We thing about techniques improvements in MEGAPOP code:
 
